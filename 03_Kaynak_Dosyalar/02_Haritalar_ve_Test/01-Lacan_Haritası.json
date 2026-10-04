@@ -1,0 +1,144 @@
+{
+  "name": "Lacancı Üçlü Yapı ve Temel Kavramlar",
+  "children": [
+    {
+      "name": "Simgesel Düzlem (Symbolic)",
+      "children": [
+        {
+          "name": "Baba-nın-Adı",
+          "children": [
+            {
+              "name": "Yasa ve Kültürün Temeli"
+            },
+            {
+              "name": "Özel Adın İşlevi"
+            },
+            {
+              "name": "Simgesel Kastrasyon"
+            }
+          ]
+        },
+        {
+          "name": "Dil ve Gösterge Sistemi",
+          "children": [
+            {
+              "name": "İmleyen ve İmlenen Eklemlenmesi"
+            },
+            {
+              "name": "Sözün İşlevi"
+            },
+            {
+              "name": "Toplumsal Alışveriş Yasaları"
+            }
+          ]
+        },
+        {
+          "name": "Büyük Öte (Grand Autre)",
+          "children": [
+            {
+              "name": "Konuşulan Yer"
+            },
+            {
+              "name": "Öznenin Taahhüdü"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "İmgesel Düzlem (Imaginary)",
+      "children": [
+        {
+          "name": "Yansıtıcı İmge (i(a))",
+          "children": [
+            {
+              "name": "Narsisistik Kuruluş"
+            },
+            {
+              "name": "Ego Oluşumu"
+            },
+            {
+              "name": "Ayna Evresi İlişkisi"
+            }
+          ]
+        },
+        {
+          "name": "İkili İlişkiler",
+          "children": [
+            {
+              "name": "Libidinal Cezbedilme"
+            },
+            {
+              "name": "Özne ve Benzeri Arasındaki Gerilim"
+            }
+          ]
+        },
+        {
+          "name": "Fantezi ve İllüzyon"
+        }
+      ]
+    },
+    {
+      "name": "Gerçek Düzlem (Real)",
+      "children": [
+        {
+          "name": "Simgeleştirilemeyen Artık"
+        },
+        {
+          "name": "Bütünlük veya Yok Olan An"
+        },
+        {
+          "name": "Analistin Sessizliği"
+        },
+        {
+          "name": "Gerçekliğe Toslama Deneyimi"
+        }
+      ]
+    },
+    {
+      "name": "Nesne a (Petit a)",
+      "children": [
+        {
+          "name": "Arzunun Nedeni"
+        },
+        {
+          "name": "Kaygı Anında Özneden Düşen"
+        },
+        {
+          "name": "Kısmi Nesne Biçimleri",
+          "children": [
+            {
+              "name": "Oral Nesne (Meme)"
+            },
+            {
+              "name": "Skopik Nesne (Bakış/Göz)"
+            },
+            {
+              "name": "Vokal Nesne (Ses)"
+            }
+          ]
+        },
+        {
+          "name": "Üstbenin Kaynağı"
+        },
+        {
+          "name": "Arzunun Dayanağı"
+        }
+      ]
+    },
+    {
+      "name": "Kavramsal İlişkiler",
+      "children": [
+        {
+          "name": "Borromean Düğümü"
+        },
+        {
+          "name": "Arzunun Öte'nin Arzusu Olması"
+        },
+        {
+          "name": "Semptomun Dil Gibi Yapılanması"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "quiz": [
+    {
+      "question": "Mental Konfüzyon indüksiyonu özellikle hangi gruptaki kişilerde tercih edilen bir yöntemdir?",
+      "answerOptions": [
+        {
+          "text": "Analitik olarak direnç gösterenler",
+          "isCorrect": true,
+          "rationale": "Analitik kişiler söylenen her kelimeyi izleme ve analiz etme eğiliminde oldukları için zihni yorarak kritik faktörü baypas etmek amacıyla konfüzyon kullanılır."
+        },
+        {
+          "text": "Sadece görsel zekası yüksek olanlar",
+          "isCorrect": false,
+          "rationale": "Metin, bu tekniğin görsel yetenekten ziyade analitik direnci kırmak üzerine odaklandığını belirtmektedir."
+        },
+        {
+          "text": "Hızlı hipnoza girmeye çok yatkın olanlar",
+          "isCorrect": false,
+          "rationale": "Hızlı indüksiyonlar bu grupta genellikle işe yaramadığı için konfüzyon gibi karmaşıklık yaratan yöntemlere ihtiyaç duyulur."
+        },
+        {
+          "text": "Hipnoz olma arzusu düşük olanlar",
+          "isCorrect": false,
+          "rationale": "Analitik kişilerde güçlü bir hipnoz olma arzusu olsa dahi, analiz etme alışkanlıkları bunu engelleyebilir; teknik arzuya değil bilişsel sürece yöneliktir."
+        }
+      ],
+      "hint": "Bu grup, seans sırasında söylenen her sözü kelime kelime takip etme alışkanlığına sahiptir."
+    },
+    {
+      "question": "Jacques Lacan'ın öğretisinde 'ünlü üçlü' olarak adlandırılan ve psikanalizin alanını tanımlayan kavramlar hangileridir?",
+      "answerOptions": [
+        {
+          "text": "Bilinç, Bilinçaltı, Bilinçdışı",
+          "isCorrect": false,
+          "rationale": "Bu kavramlar klasik Freudyen yapıya daha yakın olup Lacan'ın kendine özgü geliştirdiği kavramsal üçlü değildir."
+        },
+        {
+          "text": "Simgesel, İmgesel, Gerçek",
+          "isCorrect": true,
+          "rationale": "Lacan'ın öğretisi boyunca geliştirdiği ve Borromean düğümü ile de ilişkilendirdiği temel yapı taşı bu üç kavramdır."
+        },
+        {
+          "text": "Ego, İd, Süperego",
+          "isCorrect": false,
+          "rationale": "Bu terimler Freud'un yapısal modelidir; Lacan bunları kendi üçlüsü üzerinden yeniden yorumlasa da ana 'ünlü üçlüsü' değildir."
+        },
+        {
+          "text": "Kaygı, Suçluluk, Utanç",
+          "isCorrect": false,
+          "rationale": "Bunlar analiz sırasında karşılaşılan duygulanımlardır, ancak Lacan'ın temel teorik sacayağını oluşturmazlar."
+        }
+      ],
+      "hint": "Bu kavramlardan biri dil ve yasayla, diğeri narsisistik imajlarla, sonuncusu ise tanımlanamayan ile ilgilidir."
+    },
+    {
+      "question": "Dr. David R. Hawkins'in Bilinç Haritası'ndaki ölçek hangi sayısal aralıktadır ve hangi matematiksel yapıyı temel alır?",
+      "answerOptions": [
+        {
+          "text": "$0$ ile $1000$ arası, logaritmik ölçek",
+          "isCorrect": true,
+          "rationale": "Harita, insan deneyimini en alttan en üste kadar ölçmek için logaritmik bir yapı kullanır ve $1000$ seviyesi aydınlanmayı temsil eder."
+        },
+        {
+          "text": "$1$ ile $100$ arası, doğrusal ölçek",
+          "isCorrect": false,
+          "rationale": "Metin, haritanın doğrusal olmadığını ve egonun bu sayıları yanlış yorumlayabileceği konusunda uyarıda bulunarak logaritmik olduğunu belirtir."
+        },
+        {
+          "text": "$-500$ ile $+500$ arası, aritmetik ölçek",
+          "isCorrect": false,
+          "rationale": "Ölçek sıfırdan başlar ve negatif değerler yerine düşük enerji alanlarını (utanç, suçluluk gibi) sayısal olarak ifade eder."
+        },
+        {
+          "text": "$0$ ile $10.000$ arası, üstel ölçek",
+          "isCorrect": false,
+          "rationale": "Kaynak metin üst sınırın $1000$ olduğunu ve değerlerin logaritmik olarak ilerlediğini açıkça belirtmektedir."
+        }
+      ],
+      "hint": "En düşük değer utanç ($20$) iken, en yüksek değer aydınlanma düzeyini temsil eder."
+    },
+    {
+      "question": "Dave Elman hipnoz indüksiyonunda, kişinin 'somnambulisme' (derin trans) girdiğini kanıtlayan en kritik aşama hangisidir?",
+      "answerOptions": [
+        {
+          "text": "Göz kapaklarının ilk kez kapanması",
+          "isCorrect": false,
+          "rationale": "Gözlerin kapanması hipnozun başlangıç aşamasıdır, ancak derin transın veya somnambulizmin gerçekleştiği anlamına gelmez."
+        },
+        {
+          "text": "Koldaki ağırlık testinin yapılması",
+          "isCorrect": false,
+          "rationale": "Kolun gevşemesi fiziksel rahatlamayı gösterir, ancak zihinsel somnambulizm için yeterli bir kanıt değildir."
+        },
+        {
+          "text": "Zihinsel gevşemede rakamların kaybolması",
+          "isCorrect": true,
+          "rationale": "Hasta saymaya başladığında rakamları karanlığa veya boşluğa gönderip kaybettiğinde somnambulisme girmiş kabul edilir."
+        },
+        {
+          "text": "Derin nefes alıp tutması",
+          "isCorrect": false,
+          "rationale": "Nefes egzersizleri sadece indüksiyona girişi kolaylaştıran bir ön hazırlıktır."
+        }
+      ],
+      "hint": "Bu aşamada danışandan 1'den başlayarak sayması istenir ve zihinsel gevşeklik sonucunda sayılar unutulur."
+    },
+    {
+      "question": "Lacan'a göre analizdeki öznenin 'Ben' (Ego) yapısı ile ilgili aşağıdakilerden hangisi doğrudur?",
+      "answerOptions": [
+        {
+          "text": "Ben, gerçekliğin merkezindeki değişmez çekirdektir.",
+          "isCorrect": false,
+          "rationale": "Lacan'a göre 'Ben' değişmez bir merkez değil, imgesel ve değişken bir kuruluştur."
+        },
+        {
+          "text": "Ben, imgesel işlevi olan ve kendine yabancılaşmış bir yapıdır.",
+          "isCorrect": true,
+          "rationale": "Analitik mefhumda 'Ben', öznenin imgesel düzlemdeki narsisistik kuruluşu ve dışsal bir imgeye yabancılaşması olarak tanımlanır."
+        },
+        {
+          "text": "Ben, tamamen simgesel yasalardan bağımsız oluşur.",
+          "isCorrect": false,
+          "rationale": "Ben yapısı, simgesel ve gerçekle ilişkili olarak imgesel düzlemde kurulur; tamamen bağımsız değildir."
+        },
+        {
+          "text": "Ben, analistin hastaya vermesi gereken asıl hakikattir.",
+          "isCorrect": false,
+          "rationale": "Hastanın 'Benim hakikatim sizdedir' demesi tipik ama yanıltıcı bir tutumdur; analist hakikatin sahibi değildir."
+        }
+      ],
+      "hint": "Narsisistik kuruluş ve aynadaki imge ile olan ilişkiyi düşünün."
+    },
+    {
+      "question": "Hawkins'in Bilinç Haritası'nda 'Sevgi' ($500$) düzeyiyle ilgili hangi çıkarım yapılamaz?",
+      "answerOptions": [
+        {
+          "text": "Bu seviyeye ulaşıldığında artık serotonin desteğine gerek kalmaz.",
+          "isCorrect": false,
+          "rationale": "Metin, 1200'den fazla bilinç seviyesindeki (veya yüksek seviyelerdeki) bazı kişilerin sürekli serotonin desteğine ihtiyaç duyabileceğine dair bir istisna notu düşer."
+        },
+        {
+          "text": "Dünyadaki her şeyin sevgi dolu olduğu bir bakış açısını içerir.",
+          "isCorrect": false,
+          "rationale": "Haritadaki yüksek seviyeler, yaşamın ve benliğin sevgi dolu bir perspektiften görüldüğü enerji alanlarını temsil eder."
+        },
+        {
+          "text": "Logaritmik ölçekteki en yüksek enerji seviyesidir.",
+          "isCorrect": true,
+          "rationale": "Sevgi $500$ seviyesindedir, ancak ölçek Aydınlanma düzeyi olan $1000$'e kadar devam eder."
+        },
+        {
+          "text": "Kişinin Tanrı ve yaşam görüşünü kökten değiştirir.",
+          "isCorrect": false,
+          "rationale": "Bilinç seviyeleri değiştikçe Harita'daki sütunlarda belirtilen Tanrı, benlik ve yaşam görüşleri de paralel olarak değişir."
+        }
+      ],
+      "hint": "Harita ölçeğinin sonlandığı rakamı ve diğer yüksek farkındalık düzeylerini anımsayın."
+    },
+    {
+      "question": "Derinleştirme tekniklerinden biri olan 'Merdivenden İnme' tekniğinde, 5. basamağa ulaşıldığında danışanın ne hissetmesi telkin edilir?",
+      "answerOptions": [
+        {
+          "text": "Tüm bedensel ağrıların tamamen yok olduğu",
+          "isCorrect": false,
+          "rationale": "Ağrı kontrolü derin transın bir özelliği olsa da, merdiven tekniğinde bu basamak için spesifik olan duygu farklıdır."
+        },
+        {
+          "text": "Özgürlük duygusu ve bedenin hissedilmemesi",
+          "isCorrect": true,
+          "rationale": "Metinde 5. basamakta bedenin neredeyse hissedilmeyeceği ve içteki özgürlüğün hissedileceği vurgulanır."
+        },
+        {
+          "text": "Çocukluk anılarına ani bir geri dönüş",
+          "isCorrect": false,
+          "rationale": "Bu teknik yaş geriletme (regresyon) değil, gevşeme ve transı derinleştirme amaçlıdır."
+        },
+        {
+          "text": "Gözlerin kendiliğinden açılma isteği",
+          "isCorrect": false,
+          "rationale": "Merdivenden inerken amaç daha derine gitmektir, gözlerin açılması süreci sonlandıracak bir eylemdir."
+        }
+      ],
+      "hint": "Bu his, bedensel sınırlardan kurtulup ruhsal bir hafiflik yaşamayı simgeler."
+    },
+    {
+      "question": "Hawkins, Bilinç Haritası'ndaki enerji alanlarını doğrulamak için hangi yöntemi 'bilinç veritabanına' erişim aracı olarak kullanmıştır?",
+      "answerOptions": [
+        {
+          "text": "Psikanalitik rüya tabiri",
+          "isCorrect": false,
+          "rationale": "Rüya tabiri sübjektif bir analiz yöntemidir; Hawkins daha objektif ve ölçülebilir bir yöntem aramıştır."
+        },
+        {
+          "text": "Kinesiyolojik test (Kas testi)",
+          "isCorrect": true,
+          "rationale": "Hawkins, bilincin birbirine bağlılığını ve veri tabanındaki bilgileri doğrulamak için kinesiyolojik tepkileri kullanmıştır."
+        },
+        {
+          "text": "Hipnotik yaş geriletme",
+          "isCorrect": false,
+          "rationale": "Hipnoz bir tedavi aracı olsa da Hawkins haritadaki seviyeleri kalibre etmek için esas olarak bu yöntemi kullanmamıştır."
+        },
+        {
+          "text": "EEG ile beyin dalgası ölçümü",
+          "isCorrect": false,
+          "rationale": "EEG fiziksel beyin aktivitesini ölçer; Hawkins ise bilincin yerel olmayan enerji alanlarını ölçmeye odaklanmıştır."
+        }
+      ],
+      "hint": "Bu yöntem, bedenin doğru ve yanlışa verdiği fiziksel tepkiyi ölçen bir kas testi uygulamasıdır."
+    },
+    {
+      "question": "Hipnozda 'Kritik Faktörü Baypas Etmek' ifadesiyle temel olarak ne kastedilmektedir?",
+      "answerOptions": [
+        {
+          "text": "Kişinin fiziksel hareket yeteneğini tamamen durdurmak",
+          "isCorrect": false,
+          "rationale": "Katalepsi oluşabilse de hipnozun ana amacı fiziksel felç değil, zihinsel bir eşiği aşmaktır."
+        },
+        {
+          "text": "Bilinçli zihnin analiz ve filtreleme mekanizmasını aşmak",
+          "isCorrect": true,
+          "rationale": "Kritik faktör, gelen bilgileri analiz eden engeldir; bu engel aşılınca telkinler doğrudan bilinçaltına ulaşır."
+        },
+        {
+          "text": "Hastanın etik ve ahlaki değerlerini devre dışı bırakmak",
+          "isCorrect": false,
+          "rationale": "Hipnoz kişinin temel değer yargılarını veya iradesini zorla ortadan kaldıran sihirli bir güç değildir."
+        },
+        {
+          "text": "Kısa süreli belleği tamamen silmek",
+          "isCorrect": false,
+          "rationale": "Hipnoz hafıza kaybı yaratmak için değil, bilinçaltı programlamayı değiştirmek için kullanılır."
+        }
+      ],
+      "hint": "Bu süreç, zihnin 'kapı bekçisini' ikna ederek içeri girmeye benzer."
+    },
+    {
+      "question": "Lacan'ın seminerlerinde bahsettiği 'Kaygı' ve 'Suçluluk' arasındaki aşamalı ilişki hakkında hangisi doğrudur?",
+      "answerOptions": [
+        {
+          "text": "Suçluluk her zaman kaygıdan önce gelir.",
+          "isCorrect": false,
+          "rationale": "Lacan, fenomenlerin iki aşamalı olduğunu ve kaygının genellikle ilk aşama olduğunu belirtir."
+        },
+        {
+          "text": "Kaygı ilk aşamadır, suçluluk ise kaygıyı yatıştıran ikinci aşamadır.",
+          "isCorrect": true,
+          "rationale": "Takıntılı durumlarda ilk aşama kaygıdır, ardından suçluluk düzlemi gelerek kaygıyı dindirir."
+        },
+        {
+          "text": "Kaygı sadece simgesel bir durumdur, suçluluk ise sadece gerçektir.",
+          "isCorrect": false,
+          "rationale": "Bu duygulanımlar karmaşık yapılardır ve Lacan'ın kavramsal üçlüsünde farklı kesişim noktalarına sahiptir."
+        },
+        {
+          "text": "Kaygı ve suçluluk narsisistik ilişkiyle tamamen ilgisizdir.",
+          "isCorrect": false,
+          "rationale": "J.L. (Lacan), kaygının narsisistik ilişkiye bağlı olduğunu ve agorafobinin bunun hoş bir örneği olduğunu belirtmiştir."
+        }
+      ],
+      "hint": "Takıntı fenomenindeki aşamaları ve bir duygunun diğerini nasıl dengelediğini düşünün."
+    }
+  ],
+  "topics": {
+    "covered": [
+      "Mental Konfüzyon İndüksiyonu",
+      "Lacan'ın Simgesel, İmgesel ve Gerçek Üçlüsü",
+      "David Hawkins'in Bilinç Haritası ve Logaritmik Ölçek",
+      "Dave Elman Hipnoz Metodu ve Somnambulizm",
+      "Bilinçaltı ve Kritik Faktör Kavramları",
+      "Hipnozda Derinleştirme Teknikleri"
+    ],
+    "followUp": [
+      "Hipnotik Fenomenler (Katalepsi, Amnezi ve Halüsinasyonlar)",
+      "Borromean Düğümü ve Lacancı Matematiksel Materyalizm",
+      "Kinesiyoloji ve Enerji Alanı Kalibrasyonu",
+      "Psikanalizde Baba-nın-Adları (Nom-du-Père) Teorisi",
+      "Self-Hipnoz ve Ego Güçlendirme Teknikleri"
+    ]
+  }
+}
