@@ -2139,6 +2139,108 @@ Amaç: **Soyuttan somuta inmek.** Bu analiz yapılmadan 100 tur EFT bile az şey
 
 *Hocanın tahtadaki ayrıntılı anlatımı (zaman çizgisi, numaralı olaylar) için notlar eklenecek.*
 
+#### ADAC — Mühendislik Tasarımı (Modül → Amaç → Giriş → Script → Çıkış Testi → Hata Durumu)
+
+> **Kaynak durumu:** Derste kesin olan şu: 4 adım (Activate, Dissociate, Associate, Collapse), non-analitik oluşu ve tahtadaki zaman çizgisinde + / − olaylar ile geriye giden oklar. **Aşağıdaki modül sınırları, scriptler, çıkış testleri ve hata durumları bu 4 adımdan türetilmiş bir taslak tasarımdır;** hocanın tahtadaki anlatımıyla doğrulanıp düzeltilmelidir. ADAC adı, NLP'deki ayrıştırma (dissociation) ve çöktürme (collapse) mantığına benzer; ders materyalinde künyesi verilmedi, **teyit edilmeli.** Scriptlerdeki cümleler örnektir, hocanın metni değildir.
+
+**Sistem özeti:** Girdi: danışanın bugün taşıdığı olumsuz bir duygu/durum. Çıktı: aynı durumun duygusal yükünün nötrlenmesi. İçerik anlatılmaz, kök aranmaz.
+
+```
+M0 Uygunluk ve hazırlık
+ └─► M1 Zaman çizgisi ve olay seçimi (tahta çizimi)
+      └─► M2 A: Activate ──► M3 D: Dissociate ──► M4 A: Associate ──► M5 C: Collapse
+                                                                         └─► M6 Test ve kapanış
+```
+
+| # | Modül | Amaç | Çıktı |
+|---|---|---|---|
+| M0 | Uygunluk ve hazırlık | Yöntemin bu danışana ve bu seansa uygun olduğunu doğrulamak | Karar: ADAC / başka yöntem |
+| M1 | Zaman çizgisi | Olumsuz (−) ve olumlu (+) olayları belirlemek | İşaretli çizgi: hedef (−) ve kaynak (+) |
+| M2 | Activate | Duyguyu bugünkü yoğunluğunda erişilebilir kılmak | SUDS başlangıç değeri |
+| M3 | Dissociate | Danışanı olayın dışına almak | Gözlemci konumu, SUDS düşüşü |
+| M4 | Associate | Olumlu kaynak durumuna tam girmek | Kararlı kaynak durumu |
+| M5 | Collapse | (−) ve (+) durumları birleştirip (−) etkisini nötrlemek | Birleşmiş, nötr/olumlu durum |
+| M6 | Test ve kapanış | Sonucu ölçmek, kalıcılaştırmak, çıkarmak | SUDS, beden taraması, hipnozdan çıkış |
+
+---
+
+**M0 — Uygunluk ve Hazırlık**
+
+- **Amaç:** Non-analitik yöntemin uygun olduğunu doğrulamak.
+- **Giriş koşulu:** Derin gevşeme/trans sağlanmış; ideomotor sinyal (parmak) veya sözlü iletişim kuruluyor.
+- **Seçim ölçütü (ders notundaki non-analitik kullanım alanlarından):** danışan konuyu paylaşmak istemiyor · yoğun travma riski var ve regresyona hazır değil · süre kısıtlı · kök zaten bulunmuş, kalan yük temizlenecek.
+- **Uygun değil:** Akut psikoz, ciddi dissosiyatif bozukluk öyküsü, hipnoz sırasında kontrolü kaybetme korkusu çok yüksek danışan. Bu durumlarda M2–M5 yapılmaz; gevşeme ve ego güçlendirmeyle yetinilir.
+- **Hazırlık:** SUDS ölçeği (0–10) öğretilir. Danışanın güvenli yeri ve bir olumlu kaynak anısı önceden alınır.
+- **Çıkış testi:** Danışan "0–10 arası bir sayı" sorusuna net cevap verebiliyor.
+- **Hata durumu:** Cevap vermiyor veya trans yetersiz → derinleştirme tekrarı; olmuyorsa seans ertelenir.
+
+**M1 — Zaman Çizgisi ve Olay Seçimi**
+
+- **Amaç:** Tahtadaki çizimin işlevi: bugünkü sorunu (−) olaylara, kaynak durumunu (+) olaylara bağlamak. Geriye giden oklar, duygunun geçmiş olaylara uzandığını gösterir.
+- **Giriş koşulu:** M0 tamam.
+- **Adımlar:**
+  1. Danışana yaşamını önünde bir çizgi olarak gördürülür (geçmiş bir yanda, gelecek öbür yanda).
+  2. Bugünkü sorunlu duygu hedef (−) olarak işaretlenir.
+  3. Danışanın bildiği, güçlü bir olumlu duyguyla bağlı bir olay (+) seçilir (başarı, güven, sevgi, sakinlik).
+- **Script örneği:** *"Hayatını önünde uzanan bir çizgi gibi gör. Bugünkü bu duygunun çizgide durduğu yeri fark et… Şimdi çizgide kendini en güçlü, en güvende hissettiğin bir anı bul."*
+- **Çıkış testi:** Danışan hem (−) hem (+) için bir imge/duygu bildirdi (sinyal veya "evet").
+- **Hata durumu:** (+) bulunamıyor → kaynak olarak güvenli yer veya hayal edilen güçlü bir anı kullanılır (bkz. M4). (−) çok uzak/çok yoğun geliyorsa M2'de dozaj düşürülür.
+
+**M2 — A: Activate (Etkinleştir)**
+
+- **Amaç:** Duyguyu bugünkü haliyle erişilebilir kılmak. Çok yoğun olması gerekmez; ölçülebilir olması yeterli.
+- **Giriş koşulu:** M1'de (−) işaretli.
+- **Script örneği:** *"O duyguyu şimdi biraz hisset… Bedeninde nerede? 0'dan 10'a kaç?"*
+- **Çıkış testi:** SUDS ≥ 4 (altında etki ölçülemez). Başlangıç değeri kaydedilir.
+- **Hata durumu:**
+  - SUDS < 4 → duyguyu bilinçli şekilde biraz daha yaklaştır veya başka (−) hedef seç.
+  - Abreaksiyon (ağlama, titreme, nefes daralması) → **M3'e hemen geç;** olayın içeriğine girilmez.
+
+**M3 — D: Dissociate (Ayrıştır)**
+
+- **Amaç:** Danışan duyguyu hissetmek yerine olayı/durumu uzaktan izler.
+- **Giriş koşulu:** M2'de SUDS ölçüldü.
+- **Script örneği:** *"Şimdi o duygudan yavaşça yükseliyorsun… Kendini çizginin üstünden, uzaktan izle. Sanki bir ekranda küçük bir sahne gibi… Orada olan sen değilsin, sen buradan bakıyorsun."* (Ders notundaki yükselme/yukarıdan bakma mantığıyla uyumlu; bkz. Müezzin ve Arrow.)
+- **Çıkış testi:** SUDS en az 2–3 puan düştü veya danışan "uzaktan görüyorum" dedi.
+- **Hata durumu:** Duygu düşmüyor → mesafe artırılır (daha yukarı, daha küçük, siyah-beyaz, sessiz). Hâlâ düşmüyorsa danışan güvenli yere alınır, yöntem bırakılır.
+
+**M4 — A: Associate (Bağlan / İçine Gir)**
+
+- **Amaç:** Olumlu kaynak durumuna (+) tam girmek: görüntü, ses, beden duyumu.
+- **Giriş koşulu:** M3 sonrası danışan sakin; (+) olay erişilebilir.
+- **Script örneği:** *"Şimdi o güçlü anın içine gir… Ne görüyorsun, ne duyuyorsun, bedeninde bu güveni nerede hissediyorsun? Hissi büyüt."*
+- **Çıkış testi:** Kaynak durum SUDS karşılığı (olumlu yoğunluk) ≥ 7 veya danışan belirgin olumlu beden duyumu bildirdi.
+- **Hata durumu:** Kaynak zayıf → duyular eklenir (renk, ses, sıcaklık), çapa (bir jest) bağlanır. Olmuyorsa başka (+) olay veya güvenli yer kullanılır.
+
+**M5 — C: Collapse (Çöktür)**
+
+- **Amaç:** (−) ve (+) durumları aynı anda getirip (−) etkisini kaynağın içinde yitirmek.
+- **Giriş koşulu:** M4'te kaynak durum kararlı; (−) M3'te ayrışık.
+- **Script örneği:** *"Şimdi iki sahneyi birden getir: güçlü olduğun an ve o eski his. Yavaşça birbirine yaklaşsınlar… ve güçlü olan, diğerinin içine akıp onu çözsün. Tek bir duygu olarak karışsınlar."*
+- **Çıkış testi:** Birleşik durumun tonu nötr veya olumlu. Danışan (−) sahneyi artık aynı şekilde çağıramıyor.
+- **Hata durumu:** Olumsuz baskın çıkarsa → hemen M4'e dön, kaynağı güçlendir, (−)'yi daha uzakta tut ve çöktürmeyi küçük adımlarla (yüzde yüzde) tekrarla. Üç denemede olmazsa duyguyu sandık–yanardağ ile bırakmak (bkz. yukarı) veya analitik yönteme geç.
+
+**M6 — Test ve Kapanış**
+
+- **Amaç:** Sonucu ölçmek ve kalıcılaştırmak.
+- **Giriş koşulu:** M5 tamam.
+- **Adımlar:** SUDS yeniden ölç (hedef ≤ 2) · beden taraması (*"Neresi hafifledi?"*, sandık–yanardağ scriptindeki gibi) · çizgide geleceğe bakış: *"Gelecekte bu durumla karşılaşınca nasıl hissediyorsun?"* · hipnozdan çıkarma.
+- **Çıkış testi:** SUDS ≤ 2, beden taramasında gerginlik azalmış, gelecek testi olumlu.
+- **Hata durumu:** SUDS hâlâ yüksek → M2–M5 bir kez daha; ikinci denemede de olmuyorsa kök çözülmemiş olabilir (non-analitik riski: geçici rahatlama) → analitik regresyon planlanır. Danışan seans bitiminde dengesizse güvenli yere alıp kapanış yapılır.
+
+---
+
+**Genel kurallar:**
+- Yönlendirici soru yok, olay yorumlanmaz; gelen imge olduğu gibi kabul edilir (Snyder, madde 5).
+- Gelen sahne psikolojik gerçekliktir, tarihsel kanıt değildir.
+- Her adımda sayısal ölçüm (SUDS) vardır; geçiş koşulu **hissi değil, ölçülen değerdir.**
+
+**Açık sorular (hocadan teyit):**
+1. Tahtadaki zaman çizgisinde numaralı olaylar ne temsil ediyor ve oklar tam olarak nereye gidiyor?
+2. (+) olay seçimi nasıl yapılıyor: hocanın seçimi mi, danışanın mı?
+3. Çöktürme sırasında sayma, el hareketi veya çapa kullanılıyor mu?
+4. ADAC nerede ve kimden öğrenildi/künyesi var mı?
+
 #### Arrow Tekniği (Freddie & Anthony Jacquin)
 
 *Kaynak (ders notu):* Tekniği **Freddie Jacquin** ve oğlu **Anthony Jacquin** (İngiltere, Jacquin Hypnosis Academy) geliştirmiş/yaygınlaştırmıştır. Literatürde **"The Arrow Technique"** adıyla, içerik sorgulamayan (non-analitik) hızlı bir regresyon tekniği olarak geçer. Anthony Jacquin'in *Reality is Plastic* adlı hipnoz kitabı da bilinir.
