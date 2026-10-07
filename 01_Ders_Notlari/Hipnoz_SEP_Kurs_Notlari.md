@@ -2296,6 +2296,180 @@ M0 Uygunluk ve hazırlık
 
 **Yorum:** Hangi yılda durulacağına bilinçaltı parmak sinyaliyle karar verir; terapist yıl önermez. Dinlenme tesisi, koridordaki televizyonlu oda gibi güvenli bir izleme alanıdır. Araba ve yol imgesi, analitik yetişkinlere koridordan daha doğal gelebilir.
 
+#### Yaşam Koridoru — Mühendislik Tasarımı
+
+*Non-analitik regresyon / yaş taraması · Modül 7 (3 Ekim 2026) ders notlarından*
+
+> **Kaynak durumu:** Derste kesin olanlar: danışan yaşam koridorunda yürür; yaş yaş her kapıdan girer; odada açık olan televizyondaki sahneye bakar; otoban varyantı (tabelalarda yıllar, parmakla işaret, sapma, dinlenme tesisi, "Sorunu düzelt, arabana bin ve otobandan geri dön"). **Televizyon sahnesinden sonra yapılanlar derste anlatılmadı.** Bu yüzden M4 ve sayısal eşikler (SUDS değerleri) bir taslak tasarımdır; hocanın anlatımıyla doğrulanıp düzeltilmelidir. Scriptlerdeki cümleler örnektir, hocanın metni değildir.
+
+##### 1. Sistem özeti
+
+- **Girdi:** Yaşamın tamamının sistematik taranmasını gerektiren veya yükün hangi dönemde oluştuğu bilinmeyen danışan.
+- **Çıktı:** Duygusal yük taşıyan dönemlerin belirlenmesi ve her birinin nötrlenmesi.
+- **Yöntem sınıfı:** Non-analitik. Olay anlatılmaz, anlam aranmaz; danışan sahneyi televizyonda izler (doğal ayrışma).
+- **Temel fikir:** Her yaş ayrı bir oda; her oda ayrı işlenir ve kapatılır. Hiçbir dönem atlanmaz.
+
+```
+M0 Uygunluk ve hazırlık
+ └─► M1 Koridor kurulumu
+      └─► ┌─ M2 Kapı protokolü ─► M3 TV izleme ─► M4 Sahne işleme ─► M5 Kapıyı kapat ─┐
+          └──────────────────────── sonraki yaş / sonraki kapı ◄─────────────────────────┘
+                                                  └─► M6 Tarama sonu ve kapanış
+```
+
+| # | Modül | Amaç | Çıktı |
+|---|---|---|---|
+| M0 | Uygunluk ve hazırlık | Yöntemin bu danışana uygunluğunu doğrulamak, sinyali kurmak | Karar: koridor / başka yöntem |
+| M1 | Koridor kurulumu | Güvenli, kontrol edilebilir bir koridor oluşturmak | Betimlenmiş koridor ve kapılar |
+| M2 | Kapı protokolü | Yaş yaş her kapıya sistematik giriş | Her yaş için "sahne var / yok" |
+| M3 | TV izleme | Sahneyi ayrışık biçimde izlemek | Duygu yükü sinyali, SUDS |
+| M4 | Sahne işleme (taslak) | İzlenen sahnenin yükünü nötrlemek | Yükü düşmüş sahne |
+| M5 | Kapıyı kapat | Odayı kapatıp bir sonrakine geçmek | Kapalı oda, ilerleme kaydı |
+| M6 | Tarama sonu ve kapanış | Sonucu ölçmek, bugüne dönmek, çıkarmak | SUDS, beden taraması, çıkış |
+
+##### 2. Modüller
+
+**M0 — Uygunluk ve Hazırlık**
+
+- **Amaç:** Yaş taramasının bu danışana ve bu seansa uygun olduğunu doğrulamak; ideomotor sinyali kurmak.
+- **Giriş koşulu:** Derin gevşeme/trans sağlanmış.
+- **Adımlar:**
+  - **Uygun:** kök dönem bilinmiyor · tüm yaşamın taranması isteniyor · danışan içeriği anlatmak istemiyor · abreaksiyon riski düşük tutulmak isteniyor.
+  - **Uygun değil:** akut psikoz, ciddi dissosiyatif bozukluk öyküsü, kontrolü kaybetme korkusu çok yüksek danışan. Bu durumda tarama yapılmaz; gevşeme ve ego güçlendirme ile yetinilir.
+  - Parmak sinyalleri kurulur: evet / hayır / bilmiyorum-istemiyorum.
+  - SUDS ölçeği (0–10) öğretilir.
+  - Süre planlanır: tam tarama uzundur. Gerekirse yaşlar gruplanır (örn. çocukluk, ergenlik, yetişkinlik) veya tarama iki seansa bölünür.
+
+- **Script örneği:** *"Parmaklarından biri 'evet' için, biri 'hayır' için, biri de 'bilmiyorum ya da şimdi değil' için hazır olsun. Bilinçaltın cevap vermek istediğinde o parmak kendiliğinden kıpırdayacak."*
+
+- **Çıkış testi:** Üç sinyal ayırt ediliyor; danışan 0–10 arası bir sayı verebiliyor.
+- **Hata durumu:** Sinyal gelmiyor → sözlü yanıta geç. Trans yetersiz → derinleştirme tekrarı. Hâlâ olmuyorsa seans ertelenir.
+**M1 — Koridor Kurulumu**
+
+- **Amaç:** Danışanın kontrol ettiği, güvenli ve sıralı bir yaşam koridoru oluşturmak.
+- **Giriş koşulu:** M0 tamam.
+- **Adımlar:**
+  - Koridor görselleştirilir (ışık, zemin, uzunluk). Danışan koridoru kendi hızında yürür.
+  - Başlangıç noktası güvenli bir yer olarak belirlenir (bugün veya güvenli yer).
+  - Kapılar yaşlara göre sıralıdır. Yönün **bugünden geriye** olması otoban notundaki yönle tutarlıdır (2026'dan geriye); doğumdan ileriye doğru da tasarlanabilir. **Hocadan teyit edilmeli.**
+  - Danışan istediği an durabilir, geri dönebilir, bir kapıyı kapatabilir.
+
+- **Script örneği:** *"Önünde uzun bir koridor uzanıyor. Işığı sana uygun, zemini rahat. Bu koridor senin hayatın; her kapı bir yaşın. Hızını sen belirliyorsun, istediğin an durabilirsin."*
+
+- **Çıkış testi:** Danışan koridoru ve kapıları betimliyor ("uzun, ışıklı, kapılar sağda").
+- **Hata durumu:** Görselleştiremiyor → "sanki görüyormuş gibi" yönergesi, beden duyumu üzerinden ilerleme; olmuyorsa otoban varyantı (bkz. bölüm 3).
+**M2 — Kapı Protokolü**
+
+- **Amaç:** Her yaş için kapıya sistematik giriş; hiçbir dönemi atlamamak.
+- **Giriş koşulu:** M1: koridor kuruldu, sinyal çalışıyor.
+- **Adımlar:**
+  - Danışan ilk kapının önünde durur; yaş söylenir.
+  - Danışan kapıyı açar, odaya girer (ders notu: yaş yaş her kapıdan girer).
+  - Odada açık televizyon vardır (M3).
+  - Kapı kilitliyse veya açılmıyorsa zorlanmaz (hata durumuna bak).
+
+- **Script örneği:** *"İlk kapıya geldin. Bu kapı… yaşında. Kapıyı aç ve içeri gir. Odada açık bir televizyon göreceksin."*
+
+- **Çıkış testi:** Danışan odaya girdi ve televizyonu gördüğünü bildirdi.
+- **Hata durumu:** Kapı kilitli/açılmıyor → zorlanmaz; kapı **işaretlenir**, tarama devam eder, sonda dönmek istenip istenmediği sinyalle sorulur (bilinçaltı korumasına saygı). Danışan girmek istemiyor → hayır sinyali kabul edilir, kapı işaretlenir.
+**M3 — TV İzleme**
+
+- **Amaç:** Sahneyi yaşamak yerine ekranda izlemek; duygu yükünü ölçmek.
+- **Giriş koşulu:** M2: danışan odada, televizyon açık.
+- **Adımlar:**
+  - Danışan televizyondaki sahneye bakar (ders notu).
+  - Terapist içeriği sormaz. Ölçüm: "Bu sahnede yoğun bir his var mı?" (parmak) ve SUDS.
+  - Ayrışmayı artırma araçları: sesi kıs, ekranı küçült, siyah-beyaz yap, uzaktan kumandayı danışana ver.
+  - Sahne yoksa veya nötrse bu yaş için işlem yapılmaz; M5'e geçilir.
+
+- **Script örneği:** *"Televizyondaki sahneye bak… Sen odadasın, bunu ekrandan izliyorsun. İstersen sesi kıs, ekranı küçült. Bu sahnede yoğun bir his var mı? Evet için parmağın kıpırdasın."*
+
+- **Çıkış testi:** Sahne durumu belli: yok / nötr / yük var. Yük varsa SUDS kaydedildi.
+- **Hata durumu:** Danışan ekrana "giriyor", sahnenin içine çekiliyor → ekranı küçült, kumandayla durdur, koridora çık. Abreaksiyon (ağlama, titreme, nefes daralması) → **sahne durdurulur, kapı kapatılır**, güvenli yere alınır, gerekirse M6'daki kapanışa geçilir.
+**M4 — Sahne İşleme (TASLAK: derste anlatılmadı)**
+
+- **Amaç:** İzlenen sahnenin duygusal yükünü içeriğe girmeden nötrlemek.
+- **Giriş koşulu:** M3: yük var, danışan ayrışık izliyor.
+- **Adımlar:**
+  - **Seçenek A — Kumanda:** Danışan televizyonu kapatır, sahneyi siler veya kanalı değiştirir.
+  - **Seçenek B — Sandık–yanardağ:** Sahne sandığa konur, yanardağa atılır (bkz. Sandık ve Yanardağ scripti, aynı non-analitik aile).
+  - **Seçenek C — ADAC'a geçiş:** Yük yüksek veya inatçıysa Activate–Dissociate–Associate–Collapse uygulanır.
+  - Öneri: önce A, olmazsa B, o da yetmezse C. **Hocanın tercihi teyit edilmeli.**
+
+- **Script örneği:** *"Şimdi elindeki kumandayla bu sahneyi istediğin gibi değiştirme gücün var. İstersen ekranı karart, istersen bu sahneyi bir sandığa koyup uzaklaştır… Hafifledikçe parmağın haber versin."*
+
+- **Çıkış testi:** SUDS ≤ 2 veya danışan sahnenin artık etkisiz olduğunu bildiriyor.
+- **Hata durumu:** Sahne geri geliyor / SUDS düşmüyor → bir sonraki seçeneğe geç. Üç denemede olmuyorsa kapı işaretlenir, ayrı bir analitik seansa bırakılır (non-analitik riski: kök çözülmeden geçici rahatlama).
+**M5 — Kapıyı Kapat ve İlerle**
+
+- **Amaç:** Odayı kapatıp bir sonraki yaşa geçmek; ilerlemeyi kaydetmek.
+- **Giriş koşulu:** M3 (sahne yok/nötr) veya M4 (yük düştü).
+- **Adımlar:**
+  - Danışan odadan çıkar, kapıyı kapatır (gerekirse kilitler).
+  - Terapist yaşı ve sonucu not eder: temiz / nötrlendi / işaretli.
+  - Sonraki kapıya geçilir (M2).
+
+- **Script örneği:** *"Odadan çık ve kapıyı arkandan kapat… Bu oda tamam. Şimdi bir sonraki kapıya yürü."*
+
+- **Çıkış testi:** Danışan kapıyı kapattı ve sonraki kapının önünde.
+- **Hata durumu:** Kapı kapanmıyor → ağırlık hissi varsa yükü sandığa koyup dönülür (M4-B). Danışan yoruldu → tarama burada durdurulur, M6'ya geçilir, kalınan yaş not edilir.
+**M6 — Tarama Sonu ve Kapanış**
+
+- **Amaç:** Sonucu ölçmek, bugüne dönmek, danışanı güvenle çıkarmak.
+- **Giriş koşulu:** Tüm kapılar tamam veya tarama bilinçli olarak durduruldu.
+- **Adımlar:**
+  - Koridorun sonunda genel SUDS yeniden ölçülür (hedef ≤ 2).
+  - Beden taraması: "Neresi hafifledi?"
+  - Sinyalle sor: işaretli/kilitli kapılar var mı, bugün bir şey kalmış mı?
+  - Gelecek testi: "Bu durumla bir daha karşılaşınca nasıl hissediyorsun?"
+  - Koridoru kapat, bugüne dön, hipnozdan çıkar.
+
+- **Script örneği:** *"Koridorun sonuna geldin. Bedenine dön ve fark et, neresi hafifledi?… Koridoru olduğu gibi bırakıyorsun, istersen ona yeniden dönebilirsin. Şimdi bugüne dön."*
+
+- **Çıkış testi:** SUDS ≤ 2, beden taramasında gerginlik azalmış, gelecek testi olumlu.
+- **Hata durumu:** SUDS hâlâ yüksek veya işaretli kapı var → yeni seansta yalnızca o kapılara dönülür veya analitik regresyon (duygu köprüsü) planlanır. Danışan dengesizse güvenli yer ve kapanış telkini; hipnozdan çıkış geciktirilmez.
+##### 3. Otoban varyantı (ders notu)
+
+Koridor görselleştirmesi zor gelen veya araba/yol imgesi daha doğal olan analitik yetişkinler için alternatif kurgu. M2–M5'in yerini alır; M0, M1 mantığı ve M6 aynı kalır.
+
+| Koridor | Otoban | İşlev |
+|---|---|---|
+| Koridor | Otoban | Yaşam çizgisi; 2026'dan geriye, 19..'lu yıllara |
+| Kapı (yaş) | Tabela (yıl) | Hangi yılda durulacağına bilinçaltı karar verir |
+| Evet/hayır sinyali | Parmakla işaret | Uygun tabelada danışan parmakla işaret verir |
+| Televizyonlu oda | Dinlenme tesisi | Sorun görülen yerde sapılır, tesiste güvenle bakılır |
+| Kapıyı kapat | Arabaya bin, otobana dön | Terapist: "Sorunu düzelt, arabana bin ve otobandan geri dön." |
+
+- Terapist yıl önermez; durulacak yılı bilinçaltı parmak sinyaliyle seçer.
+- Dinlenme tesisinde sahne işleme için M4 seçenekleri (kumanda, sandık–yanardağ, ADAC) aynen kullanılabilir. **Hocanın tesiste ne yaptırdığı derste anlatılmadı; teyit edilmeli.**
+
+##### 4. Yaşam Koridoru ile ADAC karşılaştırması
+
+|  | Yaşam Koridoru | ADAC |
+|---|---|---|
+| Kapsam | Tüm yaşam taranır, çok sayıda dönem | Seçilmiş tek duygu/olay |
+| Süre | Uzun; birden fazla seansa bölünebilir | Kısa |
+| Hedef bulma | Bilinçaltı kapılarla ve sinyalle gösterir | Danışan (−) ve (+) olayları zaman çizgisinde seçer |
+| Ayrışma aracı | Televizyon / dinlenme tesisi | Olayın üstüne yükselme |
+| Nötrleme | M4 (taslak) | Çöktürme (Collapse) |
+| En uygun durum | Kök dönem bilinmiyor | Hedef duygu belli |
+
+##### 5. Genel kurallar
+
+- Yönlendirici soru yok; sahne yorumlanmaz, gelen imge olduğu gibi kabul edilir (Snyder, madde 5).
+- Gelen sahne **psikolojik gerçekliktir, tarihsel kanıt değildir**; sahneden bir kişiye suçlama veya karar çıkarılmaz.
+- Her modülde ölçüm vardır (sinyal, SUDS). Geçiş koşulu hissi değil, ölçülen değerdir.
+- Danışanın "hayır / şimdi değil" sinyali her zaman kabul edilir; kilitli kapı zorlanmaz.
+- Abreaksiyon belirtisinde sahne durdurulur, kapı kapatılır, danışan güvenli yere alınır.
+
+##### 6. Açık sorular (hocadan teyit)
+
+1. Televizyondaki sahneye baktıktan sonra tam olarak ne yapılıyor (kapatma, değiştirme, sandık, ADAC, geri sarma)?
+2. Tarama yönü: bugünden geriye mi, doğumdan ileriye mi? Her yaş için ayrı kapı mı, yoksa yaş grupları mı?
+3. Kapıya girmeden önce sinyalle "bu odada yük var mı" diye sorulup yük yoksa atlanıyor mu?
+4. Dinlenme tesisinde (otoban varyantı) sorun nasıl "düzeltiliyor"?
+5. Tekniğin adı ve kaynağı (künye) var mı?
+
 #### Tam Seans Scripti — 3 Seviye Gevşeme, Bulut, Ada, Masör
 
 *Hocanın verdiği hazır script. Non-analitik bulut metaforunu içeren tam bir seans akışı.*

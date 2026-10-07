@@ -35,4 +35,4 @@ Kurs programı · Modül 1–5 · Etik · Bilinç Haritası (Hawkins) ve Lacan �
 
 ## Açık işler
 - Modül 7 ses kayıtları (AUD-20261003-WA0031, WA0033) yazıya çevrilmedi.
-- ADAC prosedürünün tahtadaki ayrıntıları, Arrow tekniğinde oktan sonraki adımlar ve Yaşam Koridoru'nda televizyon sahnesinden sonra yapılanlar eksik.
+- ADAC tahta ayrıntıları, Arrow tekniğinde oktan sonraki adımlar ve Yaşam Koridoru'nda televizyon sahnesinden sonra yapılanlar eksik (ADAC ve Yaşam Koridoru için taslak mühendislik tasarımı yazıldı, hocadan teyit bekliyor).
