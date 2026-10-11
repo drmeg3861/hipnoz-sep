@@ -231,3 +231,9 @@ Yöntem: md5 (birebir), parmak izi veritabanı (`parmak_izi.json.gz`, 198 kaynak
 | Tıbbi Hipnoz Uygulamalarının EFT ile Birlikte Kullanımı — Dr. Semih Emre Ayyıldız (70 slayt) | Yeni; 21 görsel sayfa OCR'landı |
 | 4.Hipnozun Anayasası.doc | Farklı sürüm: "Kendimi affetmeyi istiyorum" maddesi eklenmiş, affetme maddeleri yeniden sıralanmış |
 | 5.Kolay Hipnoz Olma Rehberi.doc | Genişletilmiş sürüm (+~40 kelime: reklamcılar örneği, "trying is lying", "ben şimdi hipnozda mıyım?") |
+
+### H4. Ek ses kayıtları (11 Ekim 2026)
+| Dosya | Sonuç |
+|---|---|
+| WhatsApp Audio 2026-10-11 at 18.15.44.opus | md5 = AUD-20260714-WA0023.opus (3 dk 31 sn) — birebir aynı; dökümü D5'te |
+| WhatsApp Audio 2026-10-11 at 18.15.44 2.opus | Aynı dosyanın ikinci kopyası |
