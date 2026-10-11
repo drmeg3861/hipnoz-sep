@@ -237,3 +237,17 @@ Yöntem: md5 (birebir), parmak izi veritabanı (`parmak_izi.json.gz`, 198 kaynak
 |---|---|
 | WhatsApp Audio 2026-10-11 at 18.15.44.opus | md5 = AUD-20260714-WA0023.opus (3 dk 31 sn) — birebir aynı; dökümü D5'te |
 | WhatsApp Audio 2026-10-11 at 18.15.44 2.opus | Aynı dosyanın ikinci kopyası |
+
+### G2. NotebookLM'in reddettiği paketler ve çözüm (11 Ekim 2026)
+NotebookLM K1, K3, K4 (Cilt 1–2), K5 Cilt 1 ve K6'yı yüklemedi (K2, K5 Cilt 2, D1–D6, H1 yüklendi). Boyut, kelime ve sayfa sayısı ortak neden değil. Çözüm: `arac/metin_surumu.py` ile **yalnızca metin** sürümleri (görselsiz; OCR katmanları dahil; her kaynak için ayraç + yer imi; asıl sayfa no "— s. N —" işaretiyle):
+
+| PDF (metin) | Sayfa | Kelime | MB |
+|---|---|---|---|
+| K1 - Klinik Hipnoz ve Teknik | 518 | 295.033 | 1,5 |
+| K3 - Çocuk, BDT ve Oyun | 209 | 107.874 | 0,6 |
+| K4 - Beyin, Zihin ve Beden - Cilt 1 | 372 | 203.740 | 1,2 |
+| K4 - Beyin, Zihin ve Beden - Cilt 2 | 467 | 243.625 | 1,5 |
+| K5 - Felsefe, Psikanaliz ve Spiritüel - Cilt 1 | 509 | 273.949 | 1,6 |
+| K6 - Diğer Kitaplar ve Yayınlar | 662 | 351.674 | 2,1 |
+
+Ses: Zeynep.m4a aslında 3GPP kapsayıcısı (".m4a" uzantılı) → MP3'e çevrildi (22 dk, 10,1 MB). "Ses 260906_134526.m4a"nın kırmızı satırı aynı kaydın ikinci yüklemesi (ilki başarılı).
