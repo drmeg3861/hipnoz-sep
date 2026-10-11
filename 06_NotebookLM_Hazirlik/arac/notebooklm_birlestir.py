@@ -41,6 +41,7 @@ import subprocess
 import sys
 import tempfile
 import zipfile
+from concurrent.futures import ThreadPoolExecutor
 
 try:
     import pymupdf as fitz
@@ -102,25 +103,34 @@ def ocr_motoru():
     return _ocr
 
 
+OCR_ZAMAN_ASIMI = 180  # saniye; takılan sayfa olduğu gibi bırakılır
+_TEK_CEKIRDEK = dict(os.environ, OMP_THREAD_LIMIT="1")
+
+
 def ocr_gorsel(gorsel_bayt):
     motor = ocr_motoru()
     if not motor:
         return ""
     if motor == "tesseract":
-        r = subprocess.run(["tesseract", "stdin", "stdout", "-l", OCR_DIL, "--psm", "1"],
-                           input=gorsel_bayt, capture_output=True)
+        try:
+            r = subprocess.run(["tesseract", "stdin", "stdout", "-l", OCR_DIL, "--psm", "3"],
+                               input=gorsel_bayt, capture_output=True, timeout=OCR_ZAMAN_ASIMI)
+        except subprocess.TimeoutExpired:
+            return ""
         return r.stdout.decode("utf-8", "replace")
     sonuc, _ = motor(gorsel_bayt)
     return "\n".join(satir[1] for satir in (sonuc or []))
 
 
-def tesseract_pdf_sayfasi(gorsel_bayt, gecici):
-    """Görüntüden yalnızca görünmez metin katmanı içeren tek sayfalık PDF üretir."""
-    taban = os.path.join(gecici, "ocr_sayfa")
-    with open(taban + ".png", "wb") as f:
-        f.write(gorsel_bayt)
-    subprocess.run(["tesseract", taban + ".png", taban, "-l", OCR_DIL, "--psm", "1",
-                    "-c", "textonly_pdf=1", "pdf"], capture_output=True)
+def tesseract_pdf_sayfasi(png_yolu):
+    """PNG'den yalnızca görünmez metin katmanı içeren tek sayfalık PDF üretir."""
+    taban = png_yolu[:-4]
+    try:
+        subprocess.run(["tesseract", png_yolu, taban, "-l", OCR_DIL, "--psm", "3",
+                        "-c", "textonly_pdf=1", "pdf"], capture_output=True,
+                       timeout=OCR_ZAMAN_ASIMI, env=_TEK_CEKIRDEK)
+    except subprocess.TimeoutExpired:
+        return None
     return taban + ".pdf" if os.path.exists(taban + ".pdf") else None
 
 
@@ -217,6 +227,11 @@ def icindekiler_pdf(hedef, paket_adi, cilt, ogeler):
     SimpleDocTemplate(hedef, pagesize=A4).build(hikaye)
 
 
+def kaydet(doc, hedef):
+    # garbage=4: tekrarlanan nesne ve akışları (fontlar, görseller) birleştirir
+    doc.save(hedef, garbage=4, deflate=True, deflate_images=True, deflate_fonts=True)
+
+
 # --- Öğe hazırlama --------------------------------------------------------
 
 def oge_hazirla(yol, baslik, gecici):
@@ -226,51 +241,62 @@ def oge_hazirla(yol, baslik, gecici):
     not_ = ""
     if uzanti == ".pdf":
         kaynak = fitz.open(yol)
+        kelimeler = [kelime_say(sayfa.get_text()) for sayfa in kaynak]
+        # Taranmış sayfa: az kelime + görsel (görselsiz kısa sayfa taranmış sayılmaz)
+        taranan = [i for i, sayfa in enumerate(kaynak)
+                   if kelimeler[i] < TARANMIS_ESIK and sayfa.get_images()]
+        ocr_pdf = {}  # sayfa no -> görünmez metin katmanı PDF'i (Tesseract)
+        ocr_metin = {}  # sayfa no -> OCR metni (RapidOCR yedeği)
+        if taranan and ocr_motoru() == "tesseract":
+            pngler = {}
+            for i in taranan:  # PyMuPDF iş parçacığı güvenli değil: görüntüleri önce üret
+                pngler[i] = os.path.join(gecici, f"ocr_{i}.png")
+                kaynak[i].get_pixmap(dpi=250, colorspace=fitz.csGRAY).save(pngler[i])
+            with ThreadPoolExecutor(max_workers=os.cpu_count() or 2) as havuz:
+                for i, sonuc in zip(taranan, havuz.map(tesseract_pdf_sayfasi, [pngler[i] for i in taranan])):
+                    if sonuc:
+                        ocr_pdf[i] = sonuc
+                    os.remove(pngler[i])
+        elif taranan and ocr_motoru():
+            for i in taranan:
+                ocr_metin[i] = ocr_gorsel(kaynak[i].get_pixmap(dpi=200).tobytes("png"))
         cikti = fitz.open()
-        kelime = ocr_sayfa = taranmis = 0
-        for sayfa in kaynak:
-            metin = sayfa.get_text()
-            k = kelime_say(metin)
-            # Az kelimeli ama görselsiz sayfa (kısa son sayfa vb.) taranmış sayılmaz
-            if k >= TARANMIS_ESIK or not sayfa.get_images():
-                cikti.insert_pdf(kaynak, from_page=sayfa.number, to_page=sayfa.number)
-                kelime += k
+        kelime = ocr_sayfa = 0
+        i = 0
+        while i < len(kaynak):
+            if i not in ocr_pdf and not kelime_say(ocr_metin.get(i, "")):
+                j = i  # değişmeyen ardışık sayfaları tek seferde ekle (ortak kaynaklar bir kez kopyalanır)
+                while j + 1 < len(kaynak) and j + 1 not in ocr_pdf and not kelime_say(ocr_metin.get(j + 1, "")):
+                    j += 1
+                cikti.insert_pdf(kaynak, from_page=i, to_page=j)
+                kelime += sum(kelimeler[i:j + 1])
+                i = j + 1
                 continue
-            taranmis += 1
-            if ocr_motoru() == "tesseract":
-                # OCR yüksek çözünürlükte; sayfada saklanan görüntü düşük çözünürlükte (dosya boyutu)
-                tek = tesseract_pdf_sayfasi(sayfa.get_pixmap(dpi=250, colorspace=fitz.csGRAY).tobytes("png"), gecici)
-                if tek:
-                    tekdoc = fitz.open(tek)
-                    k2 = kelime_say(tekdoc[0].get_text())
-                    yeni = cikti.new_page(width=sayfa.rect.width, height=sayfa.rect.height)
-                    yeni.insert_image(yeni.rect, stream=sayfa.get_pixmap(dpi=110).tobytes("jpeg", jpg_quality=60))
-                    yeni.show_pdf_page(yeni.rect, tekdoc, 0)  # görünmez metin katmanı
-                    tekdoc.close()
-                    os.remove(tek)
-                    kelime += k2
-                    ocr_sayfa += 1
-                    continue
-            png = sayfa.get_pixmap(dpi=200).tobytes("png")
-            ocr = ocr_gorsel(png)
-            if kelime_say(ocr) == 0:  # OCR yok ya da boş: sayfayı olduğu gibi koy
-                cikti.insert_pdf(kaynak, from_page=sayfa.number, to_page=sayfa.number)
-                continue
-            # Görseli sayfaya koy, OCR metnini görünmez katman olarak ekle (aranabilir sayfa)
+            sayfa = kaynak[i]
             yeni = cikti.new_page(width=sayfa.rect.width, height=sayfa.rect.height)
-            yeni.insert_image(yeni.rect, stream=sayfa.get_pixmap(dpi=110).tobytes("jpeg"))
-            # Metin kutuya sığana kadar puntoyu küçült (sığmazsa PyMuPDF hiç yazmaz)
-            for punto in (7, 6, 5, 4, 3, 2.5, 2, 1.5, 1):
-                if yeni.insert_textbox(yeni.rect + (15, 15, -15, -15), ocr, fontsize=punto,
-                                       fontname="Govde", fontfile=FONT_YOLU, render_mode=3) >= 0:
-                    break
-            kelime += kelime_say(ocr)
+            # Sayfada düşük çözünürlüklü görüntü saklanır, OCR metni görünmez katman olur
+            yeni.insert_image(yeni.rect, stream=sayfa.get_pixmap(dpi=110).tobytes("jpeg", jpg_quality=60))
+            if i in ocr_pdf:
+                katman = fitz.open(ocr_pdf[i])
+                kelime += kelime_say(katman[0].get_text())
+                yeni.show_pdf_page(yeni.rect, katman, 0)
+                katman.close()
+                os.remove(ocr_pdf[i])
+            else:
+                metin = ocr_metin[i]
+                # Metin kutuya sığana kadar puntoyu küçült (sığmazsa PyMuPDF hiç yazmaz)
+                for punto in (7, 6, 5, 4, 3, 2.5, 2, 1.5, 1):
+                    if yeni.insert_textbox(yeni.rect + (15, 15, -15, -15), metin, fontsize=punto,
+                                           fontname="Govde", fontfile=FONT_YOLU, render_mode=3) >= 0:
+                        break
+                kelime += kelime_say(metin)
             ocr_sayfa += 1
-        if taranmis:
-            not_ = f"{taranmis} taranmış sayfa; {ocr_sayfa} sayfa OCR ile metne çevrildi"
+            i += 1
+        if taranan:
+            not_ = f"{len(taranan)} taranmış sayfa; {ocr_sayfa} sayfa OCR ile metne çevrildi"
             if not ocr_motoru():
                 not_ += " (OCR kurulu değil — bu sayfalar NotebookLM'de okunamayabilir)"
-        cikti.save(hedef, garbage=3, deflate=True)
+        kaydet(cikti, hedef)
         return hedef, kelime, not_
     if uzanti in GORSEL:
         ocr = ocr_gorsel(open(yol, "rb").read())
@@ -283,7 +309,7 @@ def oge_hazirla(yol, baslik, gecici):
             doc.insert_pdf(fitz.open(metin_yol))
         else:
             not_ = "görselden metin çıkmadı"
-        doc.save(hedef)
+        kaydet(doc, hedef)
         return hedef, kelime_say(ocr), not_
     if uzanti == ".docx":
         metin = docx_metni(yol)
@@ -352,7 +378,7 @@ def paket_uret(paket, cikti_klasoru, rapor):
             rapor.append([paket["ad"], ad, o["baslik"], o["kelime"], o["not"]])
         doc.set_toc(toc)
         doc.set_metadata({"title": ad, "subject": "NotebookLM kaynağı"})
-        doc.save(hedef, garbage=3, deflate=True)
+        kaydet(doc, hedef)
         toplam = sum(o["kelime"] for o in cilt)
         print(f"=> {hedef}  ({len(cilt)} kaynak, {toplam:,} kelime, {os.path.getsize(hedef)/1048576:.1f} MB)")
 
