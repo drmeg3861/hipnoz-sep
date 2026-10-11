@@ -251,3 +251,6 @@ NotebookLM K1, K3, K4 (Cilt 1–2), K5 Cilt 1 ve K6'yı yüklemedi (K2, K5 Cilt 
 | K6 - Diğer Kitaplar ve Yayınlar | 662 | 351.674 | 2,1 |
 
 Ses: Zeynep.m4a aslında 3GPP kapsayıcısı (".m4a" uzantılı) → MP3'e çevrildi (22 dk, 10,1 MB). "Ses 260906_134526.m4a"nın kırmızı satırı aynı kaydın ikinci yüklemesi (ilki başarılı).
+
+### G3. Yedek: kitap başına yalnızca-metin PDF'ler (27 dosya, toplam 9 MB)
+Metin sürümleri de NotebookLM'de uzun süre işlenince (200–350 bin kelime/kaynak) aynı 6 paket `metin_surumu.py --kitap-basina` ile kitap başına bölündü: K1 (6), K3 (3), K4 (6), K5 Cilt 1 (5), K6 (7). Her dosya 2.600–127.000 kelime, 0,02–0,7 MB; dosya adları "K1 - Kitap adı — Yazar" biçiminde (hangi pakete ait olduğu korunur).

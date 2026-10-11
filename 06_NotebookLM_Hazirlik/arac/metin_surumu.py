@@ -4,6 +4,7 @@
 Her kaynak için ayraç sayfası ve yer imi korunur; asıl kitap sayfaları
 "— s. N —" işaretiyle metin içinde belirtilir. OCR katmanları da metne dahildir.
 Kullanım: python3 metin_surumu.py girdi.pdf cikti.pdf
+          python3 metin_surumu.py --kitap-basina girdi.pdf cikti_klasoru/   (her kaynak ayrı PDF)
 """
 import html, re, sys
 import pymupdf as fitz
@@ -70,5 +71,40 @@ def main(girdi, cikti):
     print(f"{cikti}: {len(out)} sayfa, {w:,} kelime, {os.path.getsize(cikti)/1048576:.1f} MB, yer imi {len(yeni_toc)}/{len(toc)}")
 
 
+def kitap_basina(girdi, klasor):
+    """Paketteki her kaynağı ayrı, yalnızca metin içeren bir PDF olarak yazar."""
+    import os
+    nb.FONT_YOLU = nb.font_kaydet(None)
+    st = nb.stiller()
+    os.makedirs(klasor, exist_ok=True)
+    src = fitz.open(girdi)
+    paket = re.sub(r"\s*-\s*Cilt \d+$", "", src.metadata.get("title") or "Paket")
+    kod = paket.split(" - ")[0]
+    toc = src.get_toc()
+    sinir = [e[2] for e in toc] + [len(src) + 1]
+    for i, e in enumerate(toc):
+        baslik = re.sub(r"^\d+\.\s*", "", e[1])
+        bas, son = sinir[i], sinir[i + 1] - 1
+        hikaye = [Spacer(1, 5 * cm), Paragraph(html.escape(baslik), st["baslik"]),
+                  Paragraph(html.escape(f"{paket} paketinden"), st["alt"]), PageBreak()]
+        for n, p in enumerate(range(bas, son), 1):
+            t = temiz(src[p].get_text())
+            if not t:
+                continue
+            hikaye.append(Paragraph(f"<b>— s. {n} —</b>", st["govde"]))
+            for parca in re.split(r"\n{2,}", t):
+                hikaye.append(Paragraph(html.escape(parca), st["govde"]))
+        ad = nb.guvenli_ad(f"{kod} - {baslik}")[:120] + ".pdf"
+        hedef = os.path.join(klasor, ad)
+        SimpleDocTemplate(hedef, pagesize=A4, leftMargin=2 * cm, rightMargin=2 * cm,
+                          topMargin=1.8 * cm, bottomMargin=1.8 * cm, title=f"{kod} - {baslik}").build(hikaye)
+        d = fitz.open(hedef)
+        w = sum(len(re.findall(r"\w+", pg.get_text())) for pg in d)
+        print(f"{ad}: {len(d)} sayfa, {w:,} kelime, {os.path.getsize(hedef)/1048576:.1f} MB")
+
+
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2])
+    if sys.argv[1] == "--kitap-basina":
+        kitap_basina(sys.argv[2], sys.argv[3])
+    else:
+        main(sys.argv[1], sys.argv[2])
