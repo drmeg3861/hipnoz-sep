@@ -255,7 +255,7 @@ Ses: Zeynep.m4a aslında 3GPP kapsayıcısı (".m4a" uzantılı) → MP3'e çevr
 ### G3. Yedek: kitap başına yalnızca-metin PDF'ler (27 dosya, toplam 9 MB)
 Metin sürümleri de NotebookLM'de uzun süre işlenince (200–350 bin kelime/kaynak) aynı 6 paket `metin_surumu.py --kitap-basina` ile kitap başına bölündü: K1 (6), K3 (3), K4 (6), K5 Cilt 1 (5), K6 (7). Her dosya 2.600–127.000 kelime, 0,02–0,7 MB; dosya adları "K1 - Kitap adı — Yazar" biçiminde (hangi pakete ait olduğu korunur).
 
-### G4. Kullanılacak sürüm: ikiye bölünmüş paketler (12 dosya, toplam 9,5 MB) — G2 ve G3'ün yerine
+### G4. Kullanılacak sürüm: ikiye bölünmüş paketler (12 dosya, toplam 8,6 MB) — G2 ve G3'ün yerine
 Kullanıcı 27 küçük dosya yerine her paketin ikiye bölünmesini istedi. `metin_surumu.py --parca 2` ile hata veren 6 dosyanın her biri kelime sayısı dengeli 2 parçaya ayrıldı. Kitaplar ortadan bölünmedi. Yalnızca metin var, her kaynağın ayracı ve yer imi duruyor.
 
 **Ek bulgu:** Hata veren paketlerin metninde NUL (U+0000) karakterleri ve yazı tipinde karşılığı olmayan bozuk glifler vardı (ör. U+08F0). Bunlar çıktıda NUL olarak görünüyordu. Çalışan K2 ve K5 Cilt 2'de NUL yoktu. Bu karakterler artık temizleniyor; 12 dosyada geçersiz karakter sayısı 0.
