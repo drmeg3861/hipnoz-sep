@@ -143,3 +143,33 @@ temel hipnoz eğitimi ders notları.docx · Danışan Formu.docx · 6.Danışan 
 | seans metinleri: PHOTO-2024-10-25-11-12-42/43, 2024-11-15-13-38-22, 2024-11-15-13-38-23 (iki farklı foto), 2024-11-23-10-36-05 | Semih Hoca'nın **el yazısı seans akışları**: dere–kaynak–iş makinesi, mağara ödülü ve fotoğraf çapası, hamak + 41 sihirli sandık + yanardağ, "geçmişe örtü çek / komşunun hikayesi" telkinleri. Bir kısmı arşivde yazılı hâlde yok | **TUT ama** OCR el yazısında çok bozuk → elle yazıya dökülmesi önerilir |
 | Medya ve Kaynaklar: 10 foto | Kitap/film önerileri (Ters Yüz; Güçlü Sorular — Sobel & Panas; Hipnoterapi ve Hipnoanaliz — Brown & Fromm; Hipnoz: Bütüncül Tıbba Genel Bakış — ed. Dr. Mehmet Karav), meridyen saati şeması, bir zaman algısı esprisi, Louise Hay "Uçuklar" sayfası (kitap arşivde var); 3 fotodan metin çıkmadı | Kaynak olarak yüklemeye değmez; öneri listesi tek sayfa metin olarak pakete eklenebilir |
 | VIDEO-2024-11-29-15-26-18.mp4 (11 MB) | film-video tavsiyesi | İzlenip karar verilmeli |
+
+## F. İndirilen PDF'lerin tam metin analizi (11 Ekim 2026)
+
+"hipnoz sep" klasöründeki 54 belge (44 PDF + Word/sunu/txt) indirildi; hepsi Drive'daki bayt boyutuyla aynı. Her PDF'in sayfa, kelime ve taranmış sayfa sayısı çıkarıldı; metinler arşivle tam (6 kelimelik parça) karşılaştırıldı.
+
+### F1. D bölümündeki tahminlerin doğrulanması
+| Eşleşme | Sonuç | Karar |
+|---|---|---|
+| Gary H. Craig EFT.pdf ↔ document_compress.pdf | %100 aynı metin | Biri tutulur |
+| Louise Hay.pdf ↔ DOC-20210129-WA0056.pdf | Aynı kelime sayısı (13.219), aynı kitap | Louise Hay adı olan tutulur |
+| Clinical_EFT_Blueprint ↔ Blueprint2 | md5 aynı; ikisi de tamamen görsel (11 sayfa, 0 kelime) | Arşivdeki OCR metni kullanılır |
+| Peseschkian Doğu Hikayeleri ×3 | (1) ↔ ilide.info %100 aynı metin; Anna's Archive %98–99 aynı | **(1) tutulur** (105 sayfa, temiz ad); diğer ikisi atılır |
+| ERICSON-SESIM_SENINLE ↔ arşiv 35 | Aynı kitap, farklı baskı/çıkarım (%68–78 örtüşme); Drive sürümü %20 daha uzun (64.991 / 54.210 kelime) | **Drive sürümü tutulur** |
+| Zihin Okuma Teknikleri / Brotherton / İmgesel Görüntü ↔ arşiv | %72–98 örtüşme, aynı kitaplar | Biri tutulur (Drive PDF'leri orijinal düzende) |
+
+### F2. Yeni bulgu: arşivdeki "02-3.birleşim" sizin önceki birleştirmeniz
+140.707 kelimelik bu dosya şu Drive kitaplarını büyük ölçüde içeriyor: Açıklanan Bilinç Haritası (Hawkins) %100 · Bilinçli Farkındalık Temelli BT (Obsesif) %97 · BDT Kongresi Çocuk-Ergen %96 · Babanın Adları (Lacan) %89 · Bilinçaltı Zihninizin Gücü (Jensen) %45. **Ya 02 ya bu kitaplar — ikisi birden değil.**
+
+### F3. Tamamen taranmış (metin katmanı yok) PDF'ler — OCR gerekli
+| Dosya | Sayfa | Not |
+|---|---|---|
+| dave-elman-hypnotherapy (1).pdf | 352 | İngilizce; OCR kalitesi iyi |
+| 101 oyun terapisi tekniği (Kaduson & Schaefer) | 202 | Türkçe; Tesseract (tur) ile ç/ğ/ı/ş doğru tanındı |
+| "DOĞA ÜSTÜ OLMAK SRİ NİSARGADATTA.pdf" | 199 | **Dosya adı yanlış: içerik Joe Dispenza'nın "Doğaüstü Olmak" kitabı** (ilk sayfalar ve içindekiler OCR ile doğrulandı). Nisargadatta değil |
+| Clinical_EFT_Blueprint (×2) | 11 | Arşivde OCR metni var |
+
+OCR, görünmez metin katmanlı aranabilir sayfa olarak yapılır (sayfa başına ~150 KB, ~4–5 sn).
+
+### F4. Metin katmanı olan ama arada taranmış sayfa içeren kitaplar
+Çoğu kitapta 1–27 sayfa (kapak, görsel, tablo) metinsiz; betik bu sayfaları otomatik OCR'lar. En çok: BDT Kongresi (27), Lacan (22), Jensen (19), Brotherton (13), Zihin Okuma (10).
