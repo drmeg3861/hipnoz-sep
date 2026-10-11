@@ -202,3 +202,32 @@ AUD-20260802-WA0011 · AUD-20260809-WA0055 · AUD-20260809-WA0056 · AUD-2026082
 
 ### Pakete girmeyenler
 El yazısı seans fotoğrafları (Semih Hoca, 6 adet — elle yazıya dökülmeli) · Modül 7 sınıf fotoğrafları (OCR okunamadı; içerik ders notlarında) · kitap/film öneri kapak fotoğrafları · VIDEO-2024-11-29 (film tavsiyesi) · ses kayıtlarının kendisi (dökümleri D5'te).
+
+## H. Hocaların paylaştıkları — 2. Drive yüklemesi (11 Ekim 2026, "hipnoz sep" klasörü, 30 dosya)
+
+Yöntem: md5 (birebir), parmak izi veritabanı (`parmak_izi.json.gz`, 198 kaynak) ile içerik karşılaştırması; eski .doc/.ppt için catdoc ve PowerPoint metin kayıtları doğrudan okundu.
+
+### H1. Birebir kopya (16) — atla
+3.5 PATH metinli özet · 5-Path Kullanma Klavuzu · 5 PATH Basamaklar · 1. 5 PATH ileri hipnoz sistemi · EĞİTSEL HİPNOTERAPİ SEANS PLANLARI (2) · egitsel metin gemi (2) · ışık topu kütüphane (2) ve (3) · Hafıza kütüphanesi (2) · sinav_korkusu (2) · 90-01 Ders Çalışma (2) · Milton H. Erickson Sesim Seninle Her Yerde (= ERICSON-SESIM_SENINLE, K2'de) · Louise Hay (1) · Tıbbi Hipnoz Onam Formu (1) · Using_Medical_Hypnosis…EFT (1) (= kendi eşi)
+
+### H2. İçerik aynı (dosya farklı) — atla
+| Dosya | Karşılığı | Örtüşme |
+|---|---|---|
+| HGSHS-A Puanlama Formu.pdf | arşiv 14 (D1) | %96/%100 |
+| sözsüz indüksiyon adımları.pdf / yazıları.pdf | arşiv 57/58 (D1) | %100 |
+| İndüksiyon ve Derinleştirme.pdf (Canva, 107 slayt) | arşiv 22 (D1) | %90/%97 |
+| İndüksiyon ve derinleştirme teknikleri anlatılan.pptx | arşiv 51 (D1) | %89/%86 |
+| 3.DAVE ELMAN Öğrenciler için.docx | Semih Hoca seans metinleri (D2) | %100 |
+| SB MEDİPOL sunu 11-12 Temmuz.ppt (eski format) | arşiv 39 (D1) | %90 (metin, slayt kayıtlarından çıkarıldı) |
+| David J. Lieberman — Zihin Okuma Oyunları.pdf | arşiv 12 metni (K6) | %70 — aynı kitap; **PDF daha düzgün**, K6 yeniden üretilirse bu kullanılabilir |
+| Peseschkian — Doğu Hikayeleriyle Psikoterapi [Beyaz] (225 s) | K2'deki sürüm | Aynı kitap ve çeviri (Hürol Fışıloğlu); bu baskının OCR'ı daha hatalı → K2 sürümü tutuldu |
+
+### H3. Yeni veya daha iyi sürüm → **H1 - Hocaların Paylaştıkları (Ekim 2026).pdf** (6 kaynak, 163 sayfa, 7.704 kelime, 5,5 MB)
+| Kaynak | Not |
+|---|---|
+| Hipnoz Eğitimi Ders Programı 2026 (resmî PDF) | Yeni |
+| medipol-hipnoz-program-katilimci.xlsx → ders ders tablo | Arşiv 54'ün PDF'inde konu/modül/eğitmen sütunları kaybolmuştu; tablo tam hâli |
+| KATATİMİ.pdf (63 slayt) | Yeni; 19 görsel sayfa OCR'landı |
+| Tıbbi Hipnoz Uygulamalarının EFT ile Birlikte Kullanımı — Dr. Semih Emre Ayyıldız (70 slayt) | Yeni; 21 görsel sayfa OCR'landı |
+| 4.Hipnozun Anayasası.doc | Farklı sürüm: "Kendimi affetmeyi istiyorum" maddesi eklenmiş, affetme maddeleri yeniden sıralanmış |
+| 5.Kolay Hipnoz Olma Rehberi.doc | Genişletilmiş sürüm (+~40 kelime: reklamcılar örneği, "trying is lying", "ben şimdi hipnozda mıyım?") |
