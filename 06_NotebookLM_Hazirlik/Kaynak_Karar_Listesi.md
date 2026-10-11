@@ -115,3 +115,31 @@ Klinik Hipnozun Esasları (Lynn & Kirsch) · Sıradışı Terapi (Jay Haley) · 
 | Arşivde karşılığı belirsiz | Mehmet karav 1.1 mb (arşivdeki 29-/30- Mehmet_karav-1/-2 ile eşleşebilir — dinleyerek teyit) |
 | Dökümü yok (yeni) | AUD-20260802-WA0011 · AUD-20260809-WA0055/0056 · AUD-20260824-WA0003…WA0011 (9 dosya) · Ses 260906_112515 · Ses 260906_134526 · Zeynep · Safi · Bülent seans |
 | **Gizlilik** | "Zeynep", "Safi", "Bülent seans" kişi adı taşıyor; seans kaydıysa kişilerin onamı olmadan paylaşılmamalı |
+
+## E. Semih Emre Ayyıldız'ın paylaştığı Drive klasörleri (11 Ekim 2026 — katalog: `semih_hoca_katalog.tsv`)
+
+7 klasör (Modül 1, seans metinleri, Modül 2, Modül 3, Medya ve Kaynaklar, kitap tavsiyeleri [boş], film-video tavsiyeleri) + kökte 1 doküman; **49 dosya, 111 MB.** Metin içeren 30 dosyanın metni okunup arşivle 6 kelimelik parça karşılaştırmasıyla eşleştirildi.
+
+### E1. Arşivde birebir olanlar (aynı bayt boyutu) — 16 dosya
+temel hipnoz eğitimi ders notları.docx · Danışan Formu.docx · 6.Danışan Bilgi Notu.doc · 7.Hipnoz Terapisi Aydınlatılmış Onam Formu.docx · 5.Hipnozun Anayasası.doc · 2.Hipnoz Olmaya Hazır mısınız.docx · 4.Kolay Hipnoz Olma Rehberi.doc · Randevular hakkında REVİZE.docx · SUNUM 1.pptx · SUNUM 2.pptx · hipnozun Derinlikleri.pptx · beyin dalgaları.pptx (yalnızca görsel, metin yok) · ANA SUNUM temel HİPNOZ EĞİTİMİ.pptx · 5-Path Kullanma Klavuzu.docx · ESHNSL2024 Autumn.pdf (89 MB; metni `ESH_Bulten_2024_Sonbahar.txt`) · PHOTO-2024-10-25-18-35-59.jpg
+
+**Yazar notu:** Arşivde "Dr. Mehmet Karav Notları" klasöründe duran bu belgeler Drive'da Semih Hoca'nın "Modül 1" klasöründe. Hangisinin hazırladığı teyit edilmeli (ders notlarındaki atıflar buna göre düzeltilir).
+
+### E2. Arşivdeki birleşik PDF'lerin (26-MODÜL 1 / 27-MODÜL 3) içinde olanlar — 15 dosya
+- **Modül 3 (katatim/ileri regresyon metinleri), %97–100'ü 27'de:** 1. Zincir Güven · 2. Hayat Bahçesi Af Öfke · 3. Gri Oda ve Tiyatro · 4. Kumdan Kale Ego Havuz ve Şelale · Bağışıklık Sistemi Koruyucu Kalkan · 154-02 İçsel Rehber Tekniği
+- **seans metinleri, %100'ü 26'da:** 1) Mental Konfüzyon (Aç-Kapa) · 2) Asansörle İniş 10. Kat · 02) 10 Basamaklı Merdiven · 02) 20 Basamaklı Merdiven · 03) Ağırlaşma Telkini · 4) Z'den Geriye Sayma · 4) 99'dan Geriye Sayma · 3. Dave Elman Öğrenciler İçin
+- linkler - bağlantılar (%91, 43 ve 01'de)
+
+**Karar:** Bu dosyalar yeniden yüklenmez; 26 ve 27 tutulur. (Drive'daki Google Docs sürümleri daha temiz metin verdiği için birleşik pakette 26/27 yerine bunlar kullanılabilir — içerik aynı.)
+
+### E3. Yeni — 1 dosya
+| Dosya | İçerik | Karar |
+|---|---|---|
+| Medipol 2026 Hipnoz Eğitimi Soru Bankası (Google Doc) | ~46 soru (Pygmalion/Golem etkisi, pacing–leading, Sarbin & Coe rol kuramı, telkin edilebilirlik…). Arşivle örtüşme %1; kullanıcının "Hipnoz soru bankası" PDF'iyle (23 soru) de ayrı sorular | **TUT** — Soru bankası paketine |
+
+### E4. Görseller ve video
+| Dosya | İçerik | Karar |
+|---|---|---|
+| seans metinleri: PHOTO-2024-10-25-11-12-42/43, 2024-11-15-13-38-22, 2024-11-15-13-38-23 (iki farklı foto), 2024-11-23-10-36-05 | Semih Hoca'nın **el yazısı seans akışları**: dere–kaynak–iş makinesi, mağara ödülü ve fotoğraf çapası, hamak + 41 sihirli sandık + yanardağ, "geçmişe örtü çek / komşunun hikayesi" telkinleri. Bir kısmı arşivde yazılı hâlde yok | **TUT ama** OCR el yazısında çok bozuk → elle yazıya dökülmesi önerilir |
+| Medya ve Kaynaklar: 10 foto | Kitap/film önerileri (Ters Yüz; Güçlü Sorular — Sobel & Panas; Hipnoterapi ve Hipnoanaliz — Brown & Fromm; Hipnoz: Bütüncül Tıbba Genel Bakış — ed. Dr. Mehmet Karav), meridyen saati şeması, bir zaman algısı esprisi, Louise Hay "Uçuklar" sayfası (kitap arşivde var); 3 fotodan metin çıkmadı | Kaynak olarak yüklemeye değmez; öneri listesi tek sayfa metin olarak pakete eklenebilir |
+| VIDEO-2024-11-29-15-26-18.mp4 (11 MB) | film-video tavsiyesi | İzlenip karar verilmeli |
