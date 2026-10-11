@@ -173,3 +173,32 @@ OCR, görünmez metin katmanlı aranabilir sayfa olarak yapılır (sayfa başın
 
 ### F4. Metin katmanı olan ama arada taranmış sayfa içeren kitaplar
 Çoğu kitapta 1–27 sayfa (kapak, görsel, tablo) metinsiz; betik bu sayfaları otomatik OCR'lar. En çok: BDT Kongresi (27), Lacan (22), Jensen (19), Brotherton (13), Zihin Okuma (10).
+
+## G. Üretilen NotebookLM paketleri — yeni not defteri (11 Ekim 2026)
+
+Betik: `arac/notebooklm_birlestir.py` (Tesseract tur+eng OCR, her kaynak için ayraç sayfası + yer imi, cilt başına ≤450.000 kelime). Eski birleşik dosyalar (01, 02, 26, 27, 43, 56) kullanılmadı: içeriklerinin %90–99'u tek tek kaynaklardan alındı, kalan kısım bozuk el yazısı OCR'ı ve satır kırılması farkıydı. Kitap PDF'leri telifli olduğu için repoya konmadı.
+
+| # | PDF | Kaynak | Sayfa | Kelime | MB |
+|---|---|---|---|---|---|
+| 1 | D1 - Kurs Sunumları ve Ders Notları | 34 | 477 | 161.656 | 8,5 |
+| 2 | D2 - Seans Metinleri, Telkinler ve Klinik Protokoller | 31 | 268 | 61.112 | 1,7 |
+| 3 | D3 - Regresyon, 5-PATH, EFT ve Adli Hipnoz | 11 | 188 | 69.245 | 1,9 |
+| 4 | D4 - Soru Bankaları | 3 | 36 | 5.755 | 1,3 |
+| 5 | D5 - Ders Ses Kayıtları - Yazılı Dökümler | 20 | 75 | 20.111 | 0,6 |
+| 6 | D6 - Formlar ve Danışan Belgeleri | 9 | 24 | 4.500 | 0,9 |
+| 7 | K1 - Klinik Hipnoz ve Teknik | 6 | 1.276 | 292.842 | 22,3 |
+| 8 | K2 - Erickson, Metafor ve Hikaye | 5 | 1.394 | 359.058 | 16,4 |
+| 9 | K3 - Çocuk, BDT ve Oyun | 3 | 414 | 107.326 | 19,1 |
+| 10 | K4 - Beyin, Zihin ve Beden - Cilt 1 | 2 | 576 | 202.252 | 26,9 |
+| 11 | K4 - Beyin, Zihin ve Beden - Cilt 2 | 4 | 1.030 | 241.438 | 12,4 |
+| 12 | K5 - Felsefe, Psikanaliz ve Spiritüel - Cilt 1 | 5 | 1.079 | 273.026 | 23,6 |
+| 13 | K5 - Felsefe, Psikanaliz ve Spiritüel - Cilt 2 | 1 | 690 | 180.214 | 6,6 |
+| 14 | K6 - Diğer Kitaplar ve Yayınlar | 7 | 1.426 | 350.261 | 27,1 |
+
+K1, K3, K4 ve K5-Cilt 1'de OCR'lanmış/taranmış sayfa görüntüleri gri tonlamaya çevrilip küçültüldü (gönderim sınırı 30 MB); metin katmanı ve kelime sayıları birebir korundu.
+
+### Yeni not defterine ayrıca yüklenecek ses kayıtları (dökümü olmayan 17 kayıt, Drive "hipnoz sep")
+AUD-20260802-WA0011 · AUD-20260809-WA0055 · AUD-20260809-WA0056 · AUD-20260824-WA0003 · WA0004 · WA0005 · WA0006 · WA0007 · WA0008 · WA0009 · WA0010 · WA0011 · Ses 260906_112515 · Ses 260906_134526 · Zeynep · Safi · Bülent seans (son üçü kişi adlı — onam kontrolü)
+
+### Pakete girmeyenler
+El yazısı seans fotoğrafları (Semih Hoca, 6 adet — elle yazıya dökülmeli) · Modül 7 sınıf fotoğrafları (OCR okunamadı; içerik ders notlarında) · kitap/film öneri kapak fotoğrafları · VIDEO-2024-11-29 (film tavsiyesi) · ses kayıtlarının kendisi (dökümleri D5'te).

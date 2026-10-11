@@ -275,7 +275,7 @@ def oge_hazirla(yol, baslik, gecici):
             sayfa = kaynak[i]
             yeni = cikti.new_page(width=sayfa.rect.width, height=sayfa.rect.height)
             # Sayfada düşük çözünürlüklü görüntü saklanır, OCR metni görünmez katman olur
-            yeni.insert_image(yeni.rect, stream=sayfa.get_pixmap(dpi=110).tobytes("jpeg", jpg_quality=60))
+            yeni.insert_image(yeni.rect, stream=sayfa.get_pixmap(dpi=90, colorspace=fitz.csGRAY).tobytes("jpeg", jpg_quality=40))
             if i in ocr_pdf:
                 katman = fitz.open(ocr_pdf[i])
                 kelime += kelime_say(katman[0].get_text())
