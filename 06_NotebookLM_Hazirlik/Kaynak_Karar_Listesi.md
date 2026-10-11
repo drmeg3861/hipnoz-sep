@@ -254,3 +254,25 @@ Ses: Zeynep.m4a aslında 3GPP kapsayıcısı (".m4a" uzantılı) → MP3'e çevr
 
 ### G3. Yedek: kitap başına yalnızca-metin PDF'ler (27 dosya, toplam 9 MB)
 Metin sürümleri de NotebookLM'de uzun süre işlenince (200–350 bin kelime/kaynak) aynı 6 paket `metin_surumu.py --kitap-basina` ile kitap başına bölündü: K1 (6), K3 (3), K4 (6), K5 Cilt 1 (5), K6 (7). Her dosya 2.600–127.000 kelime, 0,02–0,7 MB; dosya adları "K1 - Kitap adı — Yazar" biçiminde (hangi pakete ait olduğu korunur).
+
+### G4. Kullanılacak sürüm: ikiye bölünmüş paketler (12 dosya, toplam 9,5 MB) — G2 ve G3'ün yerine
+Kullanıcı 27 küçük dosya yerine her paketin ikiye bölünmesini istedi. `metin_surumu.py --parca 2` ile hata veren 6 dosyanın her biri kelime sayısı dengeli 2 parçaya ayrıldı. Kitaplar ortadan bölünmedi. Yalnızca metin var, her kaynağın ayracı ve yer imi duruyor.
+
+**Ek bulgu:** Hata veren paketlerin metninde NUL (U+0000) karakterleri ve yazı tipinde karşılığı olmayan bozuk glifler vardı (ör. U+08F0). Bunlar çıktıda NUL olarak görünüyordu. Çalışan K2 ve K5 Cilt 2'de NUL yoktu. Bu karakterler artık temizleniyor; 12 dosyada geçersiz karakter sayısı 0.
+
+| Dosya | İçerik | Sayfa | Kelime |
+|---|---|---|---|
+| K1a - Klinik Hipnoz ve Teknik (Lynn & Kirsch, Uran, Nefes, Enerji) | Lynn & Kirsch, Bülent Uran, Nefes egz., Enerji noktaları | 300 | 148.629 |
+| K1b - Klinik Hipnoz ve Teknik (Elman, Sheehan) | Dave Elman (OCR), Elaine Sheehan | 219 | 146.418 |
+| K3a - 101 Oyun Terapisi Tekniği (Kaduson & Schaefer) | 101 Oyun Terapisi (OCR) | 161 | 87.535 |
+| K3b - Çocuk, BDT ve Oyun (BDT Kongresi, Farkındalık-OKB) | BDT Kongresi, Bilinçli Farkındalık–OKB | 49 | 20.354 |
+| K4a - Plasebo Sensin (Dispenza) | Plasebo Sensin | 178 | 94.096 |
+| K4b - Doğaüstü Olmak (Dispenza) | Doğaüstü Olmak (OCR) | 195 | 109.649 |
+| K4c - Beyin, Zihin ve Beden (Perlmutter, Jensen) | Daha İyi Bir Beyin, Bilinçaltı Zihninizin Gücü | 234 | 121.737 |
+| K4d - Beyin, Zihin ve Beden (Churchland, Loehr) | Madde ve Bilinç, Stres Altında Başarılı Olmak | 234 | 121.891 |
+| K5a - Felsefe, Psikanaliz ve Spiritüel (Hawkins, Altıntaş) | Bilinç Haritası, İbn Sina Metafiziği | 239 | 133.612 |
+| K5b - Felsefe, Psikanaliz ve Spiritüel (Lacan, Maitri, Besant) | Babanın Adları, Enneagram, Teosofi | 271 | 140.349 |
+| K6a - Diğer Kitaplar ve Yayınlar (Duhigg, Lieberman, Hay) | Alışkanlıkların Gücü, Zihin Okuma Oyunları, Louise Hay | 326 | 174.695 |
+| K6b - Diğer Kitaplar ve Yayınlar (Brotherton, Walters, Babaoğlu, ESH Bülteni) | Şüpheci Zihinler, Zihin Okuma Teknikleri, İmgesel Görüntü Yaşantısı, ESH Bülten | 337 | 176.966 |
+
+K5 Cilt 2 (çalışıyor) eski adıyla kalır. NotebookLM'de G2 "metin" paketleri, G3 kitap başına dosyalar ve eski kırmızı K satırları **yüklenmemeli veya silinmeli**. Aynı kitaplar iki kez girmesin.
