@@ -27,3 +27,9 @@ Kural: Tam metni olan, daha az bozukluk içeren, daha yeni sürüm ve doğru adl
 | B1 | `3_SEVI_YE_GEVS_EME_BULUT_ADA_MASO_R_1.pdf` | `03_Kaynak_Dosyalar/07_Scriptler/3_SEVI_YE_GEVS_EME_BULUT_ADA_MASO_R.pdf` (+ `04/3_Seviye_Gevseme_Bulut_Ada_Masor.txt`) | Birebir aynı dosya (md5 eşit) | **Yenisini at** |
 | B2 | `4__Duygular_kitab__1.docx` | `03_Kaynak_Dosyalar/06_5PATH_Kaynaklari/4__Duygular_kitabı.docx` (+ `04/5path_kaynaklari/duygular.md`) | Birebir aynı dosya (md5 eşit) | **Yenisini at** |
 | B3 | `90-01_-_DERS_C_ALIS_MA_GEMI__ALI__ES_REF_hoca_1.docx` (Ders Çalışma Metni, 740 kelime) | `ilk_arsiv_57_dosya/56-modül 5 Karav notlar.pdf.md`, ilk 112 satır | Yeni dosyanın 740 kelimesinin tamamı 56'da kelimesi kelimesine var; 56 ayrıca Eğitsel Hipnoterapi Seans Planları, Sınav Simülasyonu vb. içeriyor (9.658 kelime) | **Yenisini at, 56'yı tut.** Not: Dosya adı metni Ali Eşref Hoca'ya, 56 ise Karav notlarına bağlıyor — kaynak (yazar) teyit edilmeli |
+
+## C. 2. yükleme partisi (11 Ekim 2026)
+
+| # | Yeni dosya | Arşivdeki karşılığı | Sonuç | Karar |
+|---|---|---|---|---|
+| C1 | `adli-hipnoz.pdf.pdf` (29 sayfa, Dumanlı–Karadeniz–Hancı) | `03_Kaynak_Dosyalar/03_Kitaplar_ve_Makaleler/adli-hipnoz_pdf.pdf` (+ `04/Adli_Hipnoz_makalesi.txt`, 7.094 kelime) | Birebir aynı dosya (md5 eşit) | **Yenisini at.** Notlarda özeti zaten var (Modül 7 → Makale Özeti — Adli Hipnoz) |
