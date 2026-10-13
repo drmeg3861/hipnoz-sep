@@ -276,3 +276,8 @@ Kullanıcı 27 küçük dosya yerine her paketin ikiye bölünmesini istedi. `me
 | K6b - Diğer Kitaplar ve Yayınlar (Brotherton, Walters, Babaoğlu, ESH Bülteni) | Şüpheci Zihinler, Zihin Okuma Teknikleri, İmgesel Görüntü Yaşantısı, ESH Bülten | 337 | 176.966 |
 
 K5 Cilt 2 (çalışıyor) eski adıyla kalır. NotebookLM'de G2 "metin" paketleri, G3 kitap başına dosyalar ve eski kırmızı K satırları **yüklenmemeli veya silinmeli**. Aynı kitaplar iki kez girmesin.
+
+## I. Tek dosya yüklemeleri (13 Ekim 2026)
+| Dosya | Sonuç | En yüksek örtüşme |
+|---|---|---|
+| hipnoz_ilk_seans_Otomatik_olarak_kaydedildi.docx (1.938 kelime) | **Yeni.** Kaynaklarda birebir karşılığı yok. Tam ilk seans scripti: sahil → dere → şelale/kaynak → mağara → patika → çardak → krater rüyası → 41 sandığı kilitleyip yanardağa atma → "sil ve at" telkinleri → çapa (başparmak içeride yumruk + 3 nefes) → 5 dk bilinçaltı düzenleme → 1-2-3 uyandırma | %3,9 (56-Karav Modül 5 notları), %3,3 (D2-19 Eğitsel Hipnoz: gemi, zaman kapısı, şelale). Ortak olan yalnızca kalıp indüksiyon cümleleri |
