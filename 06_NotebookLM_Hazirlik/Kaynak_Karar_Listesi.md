@@ -283,7 +283,7 @@ K5 Cilt 2 (çalışıyor) eski adıyla kalır. NotebookLM'de G2 "metin" paketler
 | hipnoz_ilk_seans_Otomatik_olarak_kaydedildi.docx (1.938 kelime) | **Yeni.** Kaynaklarda birebir karşılığı yok. Tam ilk seans scripti: sahil → dere → şelale/kaynak → mağara → patika → çardak → krater rüyası → 41 sandığı kilitleyip yanardağa atma → "sil ve at" telkinleri → çapa (başparmak içeride yumruk + 3 nefes) → 5 dk bilinçaltı düzenleme → 1-2-3 uyandırma | %3,9 (56-Karav Modül 5 notları), %3,3 (D2-19 Eğitsel Hipnoz: gemi, zaman kapısı, şelale). Ortak olan yalnızca kalıp indüksiyon cümleleri |
 
 ## J. Prof. Dr. Mehmet Yücel Ağargün sunumları (30 Ekim 2026, 5 pptx)
-Beşi de **yeni**: parmak izi veritabanında hiçbiri %5 örtüşme eşiğini geçmedi. Programa göre Sigara, OKB, kekemelik ve tikler Modül 7 konusu, Ağrının nörofizyolojisi Modül 8 konusu. Hepsi tek pakete alındı: **M7-8 - Ağargün Sunumları (Sigara, OKB, Kekemelik, Tik, Ağrı).pdf** (92 sayfa, 24.651 kelime, 0,4 MB, yalnızca metin).
+Beşi de **yeni**: parmak izi veritabanındaki 216 kaynağın hiçbiriyle örtüşmesi %5 eşiğini geçmedi. Veritabanı artık 221 kaynak. Programa göre Sigara, OKB, kekemelik ve tikler Modül 7 konusu, Ağrının nörofizyolojisi Modül 8 konusu. Hepsi tek pakete alındı: **M7-8 - Ağargün Sunumları (Sigara, OKB, Kekemelik, Tik, Ağrı).pdf** (92 sayfa, 24.651 kelime, 0,4 MB, yalnızca metin).
 
 | # | Sunum | Slayt | Kelime (slayt + not) |
 |---|---|---|---|

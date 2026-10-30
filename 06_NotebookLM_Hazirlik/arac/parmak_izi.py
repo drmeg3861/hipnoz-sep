@@ -4,8 +4,9 @@
 Her kaynağın metninden 6 kelimelik parçaların özetleri (hash) çıkarılır;
 yalnızca 1/16'lık bir örnek saklanır (metnin kendisi saklanmaz).
 Kullanım:
-  python3 parmak_izi.py ekle  --db parmak_izi.json.gz --etiket "paket/kaynak" --metin dosya.txt [--dosya orijinal.pdf]
-  python3 parmak_izi.py karsilastir --db parmak_izi.json.gz --metin yeni.txt
+  python3 parmak_izi.py ekle  --etiket "paket/kaynak" --metin dosya.txt [--dosya orijinal.pdf]
+  python3 parmak_izi.py karsilastir --metin yeni.txt
+  (--db verilmezse 06_NotebookLM_Hazirlik/parmak_izi.json.gz kullanılır)
 """
 import argparse, gzip, hashlib, json, os, re, sys
 
@@ -48,7 +49,8 @@ def karsilastir(db, metin, en_az=0.05):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("islem", choices=["ekle", "karsilastir"])
-    ap.add_argument("--db", required=True)
+    ap.add_argument("--db", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir,
+                                                 "parmak_izi.json.gz"))
     ap.add_argument("--metin", required=True)
     ap.add_argument("--etiket")
     ap.add_argument("--dosya")
