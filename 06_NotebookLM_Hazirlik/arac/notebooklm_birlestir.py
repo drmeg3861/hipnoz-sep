@@ -35,11 +35,13 @@ import hashlib
 import html
 import json
 import os
+import posixpath
 import re
 import shutil
 import subprocess
 import sys
 import tempfile
+import unicodedata
 import zipfile
 from concurrent.futures import ThreadPoolExecutor
 
@@ -136,8 +138,23 @@ def tesseract_pdf_sayfasi(png_yolu):
 
 # --- Metin çıkarma -------------------------------------------------------
 
+def _gecersiz_karakter(ch, _font=[]):
+    """NUL vb. kontrol karakterleri, U+FFFD ve yazı tipinde glifi olmayanlar
+    (PDF'te NUL olarak çıkıp NotebookLM'in işlemesini bozabiliyor)."""
+    if ch in "\n\t" or ch.isspace():
+        return False
+    if unicodedata.category(ch) in ("Cc", "Co", "Cs", "Cn") or ch == "\ufffd":
+        return True
+    if not _font and FONT_YOLU:
+        _font.append(fitz.Font(fontfile=FONT_YOLU))
+    return bool(_font) and not _font[0].has_glyph(ord(ch))
+
+
 def temizle(metin):
     metin = metin.replace("\r\n", "\n").replace("\r", "\n")
+    gecersiz = {ch for ch in set(metin) if _gecersiz_karakter(ch)}
+    if gecersiz:
+        metin = "".join(ch for ch in metin if ch not in gecersiz)
     metin = re.sub(r"\\([\\*#\-!\[\]_.()>`|])", r"\1", metin)       # markdown kaçışları
     metin = re.sub(r"^\s*#\s*index\.html\s*$", "", metin, flags=re.M)
     metin = re.sub(r"^\s*Image labels:.*$", "", metin, flags=re.M)  # Drive OCR etiketleri
@@ -158,19 +175,63 @@ def docx_metni(yol):
     return "\n".join(paragraflar)
 
 
+def _pptx_iliskiler(z, ad):
+    """Bir pptx parçasının ilişkileri: {rId: (tür, hedef yol)}."""
+    klasor, dosya = posixpath.split(ad)
+    rels = f"{klasor}/_rels/{dosya}.rels"
+    if rels not in z.namelist():
+        return {}
+    sonuc = {}
+    for el in re.findall(r"<Relationship\b[^>]*>", z.read(rels).decode("utf-8")):
+        a = dict(re.findall(r'(\w+)="([^"]*)"', el))
+        if "Id" in a and "Target" in a and a.get("TargetMode") != "External":
+            sonuc[a["Id"]] = (a.get("Type", "").rsplit("/", 1)[-1],
+                              posixpath.normpath(posixpath.join(klasor, a["Target"])))
+    return sonuc
+
+
+def _pptx_paragraflar(xml):
+    satirlar = []
+    for p in re.findall(r"<a:p>.*?</a:p>", xml, flags=re.S):
+        t = "".join(re.findall(r"<a:t>(.*?)</a:t>", p, flags=re.S))
+        if t.strip():
+            satirlar.append(html.unescape(t))
+    return satirlar
+
+
 def pptx_metni(yol):
+    """Slayt metinleri (sunumdaki sırayla), konuşmacı notları ve metin içeren büyük görsellerin OCR'ı."""
+    ocr_onbellek = {}
     with zipfile.ZipFile(yol) as z:
-        slaytlar = sorted(
-            (n for n in z.namelist() if re.match(r"ppt/slides/slide\d+\.xml$", n)),
-            key=lambda n: int(re.findall(r"\d+", n)[-1]))
+        adlar = set(z.namelist())
+        sunum = _pptx_iliskiler(z, "ppt/presentation.xml")
+        slaytlar = [sunum[r][1] for r in re.findall(r'<p:sldId\b[^>]*?r:id="([^"]+)"',
+                                                   z.read("ppt/presentation.xml").decode("utf-8"))
+                    if r in sunum and sunum[r][1] in adlar] if "ppt/presentation.xml" in adlar else []
+        if not slaytlar:  # sıra okunamazsa dosya numarasına göre
+            slaytlar = sorted((n for n in adlar if re.match(r"ppt/slides/slide\d+\.xml$", n)),
+                              key=lambda n: int(re.findall(r"\d+", n)[-1]))
         parcalar = []
         for i, ad in enumerate(slaytlar, 1):
-            xml = z.read(ad).decode("utf-8")
-            satirlar = []
-            for p in re.findall(r"<a:p>.*?</a:p>", xml, flags=re.S):
-                t = "".join(re.findall(r"<a:t>(.*?)</a:t>", p, flags=re.S))
-                if t.strip():
-                    satirlar.append(html.unescape(t))
+            satirlar = _pptx_paragraflar(z.read(ad).decode("utf-8"))
+            for tur, hedef in _pptx_iliskiler(z, ad).values():
+                if tur == "image" and hedef in adlar:
+                    if hedef not in ocr_onbellek:
+                        bayt, metin = z.read(hedef), ""
+                        try:
+                            buyuk = fitz.Pixmap(bayt).width >= 500  # simgeleri atla
+                        except Exception:
+                            buyuk = False
+                        if buyuk:
+                            metin = " ".join(ocr_gorsel(bayt).split())
+                        ocr_onbellek[hedef] = metin if len(re.findall(r"\w{3,}", metin)) >= 5 else ""
+                    if ocr_onbellek[hedef]:
+                        satirlar.append("[Görseldeki metin (OCR)] " + ocr_onbellek[hedef])
+                elif tur == "notesSlide" and hedef in adlar:
+                    notlar = [n for n in _pptx_paragraflar(z.read(hedef).decode("utf-8"))
+                              if not n.strip().isdigit()]  # slayt numarası alanı
+                    if notlar:
+                        satirlar.append("Konuşmacı notu:\n" + "\n".join(notlar))
             parcalar.append(f"— Slayt {i} —\n" + "\n".join(satirlar))
     return "\n\n".join(parcalar)
 

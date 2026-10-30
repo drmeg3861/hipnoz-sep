@@ -281,3 +281,20 @@ K5 Cilt 2 (çalışıyor) eski adıyla kalır. NotebookLM'de G2 "metin" paketler
 | Dosya | Sonuç | En yüksek örtüşme |
 |---|---|---|
 | hipnoz_ilk_seans_Otomatik_olarak_kaydedildi.docx (1.938 kelime) | **Yeni.** Kaynaklarda birebir karşılığı yok. Tam ilk seans scripti: sahil → dere → şelale/kaynak → mağara → patika → çardak → krater rüyası → 41 sandığı kilitleyip yanardağa atma → "sil ve at" telkinleri → çapa (başparmak içeride yumruk + 3 nefes) → 5 dk bilinçaltı düzenleme → 1-2-3 uyandırma | %3,9 (56-Karav Modül 5 notları), %3,3 (D2-19 Eğitsel Hipnoz: gemi, zaman kapısı, şelale). Ortak olan yalnızca kalıp indüksiyon cümleleri |
+
+## J. Prof. Dr. Mehmet Yücel Ağargün sunumları (30 Ekim 2026, 5 pptx)
+Beşi de **yeni**: parmak izi veritabanında hiçbiri %5 örtüşme eşiğini geçmedi. Programa göre Sigara, OKB, kekemelik ve tikler Modül 7 konusu, Ağrının nörofizyolojisi Modül 8 konusu. Hepsi tek pakete alındı: **M7-8 - Ağargün Sunumları (Sigara, OKB, Kekemelik, Tik, Ağrı).pdf** (92 sayfa, 24.651 kelime, 0,4 MB, yalnızca metin).
+
+| # | Sunum | Slayt | Kelime (slayt + not) |
+|---|---|---|---|
+| 1 | Sigara Bırakma ve Hipnoz | 35 | 6.065 |
+| 2 | OKB ve İlişkili Bozukluklarda Hipnoz | 26 | 4.291 |
+| 3 | Kekemelik ve Hipnoz | 24 | 4.232 |
+| 4 | Tik Bozuklukları ve Hipnoz | 28 | 4.301 |
+| 5 | Ağrının Nörofizyolojisi ve Hipnoz | 33 | 5.762 |
+
+Notlar:
+- Konuşmacı notları slayt metninden uzun (toplam ~10.000 kelime). Araç bunları artık pakete alıyor.
+- Görsellerin çoğu 256 px simge. Ağrı sunumundaki teta–gama zarf diyagramındaki yazılar OCR ile alındı.
+- Kekemelik sunumunun dosya üst verisinde başlık "Migren, Diğer Baş Ağrıları ve Hipnoz" yazıyor (şablon kalıntısı). İçerik kekemelik.
+- Sigara ve Kekemelik kapaklarında "Prod. Dr." yazım hatası var. Paket başlıklarında "Prof. Dr." kullanıldı.
