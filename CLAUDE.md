@@ -18,6 +18,7 @@ Bu klasör, kullanıcının **Tıbbi Hipnoz Sertifikalı Eğitim Programı (SEP)
 | `02_Konusmalar/` | Claude ile konuşma kaydı + Semih Hoca'nın telkin metinlerinin tam hali |
 | `03_Kaynak_Dosyalar/` | Kullanıcının yüklediği orijinal dosyalar (konuya göre klasörlenmiş) |
 | `04_Metne_Donusturulmus/` | Orijinallerin metin halleri: ilk arşivin 57 dosyası, slayt setlerinin OCR metinleri, Karav ve 5-PATH belgeleri, EFT el kitabı, makale |
+| `06_NotebookLM_Kaynaklari/` | NotebookLM'e yüklenecek, metne dönüştürülüp birleştirilmiş kaynaklar (ör. mizaç/kişilik/duygudurum: Timuçin Oral + Mizaç Harita) |
 | `05_Dahil_Edilmeyenler.md` | Boyutu nedeniyle konmayan videolar, ses kayıtları, görsel slaytlar |
 
 ## Ders notlarının ana bölümleri
