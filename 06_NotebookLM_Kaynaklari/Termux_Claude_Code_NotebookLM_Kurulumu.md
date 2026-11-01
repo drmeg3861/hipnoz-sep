@@ -125,3 +125,5 @@ Sonra: Termux'u kapatıp aç → **3** (NotebookLM girişi, Firefox + Cookie-Edi
 6. Tablette nlm.json'u sil. Dosyayı WhatsApp/e-posta/bulutla gönderme.
 
 **Güncelleme:** Chromium yolu işe yaramadı. Çerez, tabletteki Linux Firefox'ta Google'dan **çıkış yapıp tekrar giriş yapınca** birden geldi. Sonraki seferlerde ilk denenecek yöntem bu: çıkış → giriş → Cookie-Editor'da `__Secure-1PSIDTS` kontrolü.
+
+**Sonuç (1 Kasım 2026, 14:18):** Telefonda NotebookLM girişi tamam (22 not defteri görünüyor). Yöntem: tabletteki Linux Firefox'ta çıkış/giriş → Cookie-Editor Export → Quick Share ile telefona **metin** olarak gönderildi (panoya düştü) → Termux'ta `sh ~/imp.sh` → yapıştır → Enter → CTRL + d. Kurulum tamamlandı.
