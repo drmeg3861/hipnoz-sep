@@ -107,3 +107,19 @@ echo "=== BLOK B TAMAM — Termux'u kapatip ac ==="
 ```
 
 Sonra: Termux'u kapatıp aç → **3** (NotebookLM girişi, Firefox + Cookie-Editor ile) → **1** (Claude Code girişi; bağlantıyı **More… → Select URL** ile kopyala).
+
+---
+
+## Durum notu — 1 Kasım 2026 öğlen (kaldığımız yer)
+
+- Telefonda Termux yeniden kuruldu: Blok A + Blok B **tamam**, Claude Code girişi **tamam**.
+- **Eksik olan tek şey: NotebookLM girişi.** Firefox (telefonda da, tabletteki Linux masaüstünde de) `__Secure-1PSIDTS` çerezini almıyor. İlk kurulumda bir kez tesadüfen gelmişti.
+- Not: Sabahki "otomatik tıklama" Bluetooth mouse'tan kaynaklanıyordu; kurulumla ilgisi yoktu.
+
+### Devam planı (tabletteki Linux + Chromium)
+1. Tablet Linux Terminal: `sudo apt update && sudo apt install -y chromium pipx` ve `pipx install "notebooklm-py[cookies]" && pipx ensurepath && source ~/.bashrc`
+2. Chromium'da notebook.google.com'a giriş yap, 1-2 dk bekle, **Chromium'u kapat**.
+3. `notebooklm login --browser-cookies chromium` ve `notebooklm auth check --test --json` ("status": "ok").
+4. `cp ~/.notebooklm/profiles/default/storage_state.json /mnt/shared/nlm.json` → tablette Dosyalar → İndirilenler → nlm.json → **Quick Share** ile telefona.
+5. Telefon Termux: `notebooklm auth import-cookies ~/storage/downloads/nlm.json; rm -f ~/storage/downloads/nlm.json; notebooklm auth check --test --json`
+6. Tablette nlm.json'u sil. Dosyayı WhatsApp/e-posta/bulutla gönderme.
