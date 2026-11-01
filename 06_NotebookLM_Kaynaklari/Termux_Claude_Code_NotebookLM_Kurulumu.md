@@ -50,3 +50,60 @@ Claude Code'dan çıkmak: `/exit` yaz ya da **CTRL + c**'ye iki kez bas.
 ### Bilinen sınırlar
 - Claude Code 2.1.112 eski bir sürüm; yeni özelliklerin bir kısmı yok. Anthropic eski sürümleri kabul etmemeye başlarsa çalışmaz. O zaman çözüm: Termux içinde `proot-distro` ile Ubuntu kurup güncel sürümü orada çalıştırmak.
 - `notebooklm-py` resmî değil; Google arayüzünü değiştirirse bozulabilir. Güncellemek için: `pip install -U notebooklm-py`.
+
+---
+
+## Yeni bir cihaza hızlı kurulum (ör. tablet)
+
+Termux'u kur ve aç. Aşağıdaki iki bloğu **sırayla** yapıştır. Bir blok bitmeden (yani `~ $` geri gelmeden) diğerine geçme.
+
+### Blok A — paketler (5-10 dk)
+```
+yes | pkg update && yes | pkg upgrade && pkg install -y python nodejs-lts git ripgrep && pip install notebooklm-py && npm install -g @anthropic-ai/claude-code@2.1.112 && notebooklm skill install && echo "=== BLOK A TAMAM ==="
+```
+
+### Blok B — ayarlar, kısayollar, menü
+```
+mkdir -p ~/hipnoz
+cat > ~/imp.sh <<'EOF'
+clear
+echo ">>> SIMDI JSON'U YAPISTIR, sonra Enter, sonra CTRL+d"
+cat > ~/c.json
+clear
+python -c "import re,os,sys;p=os.path.expanduser('~/c.json');s=open(p,errors='ignore').read();m=re.search(r'\[\s*\{',s);m or sys.exit('JSON bulunamadi');open(p,'w').write(s[m.start():s.rfind(']')+1])" && notebooklm auth import-cookies ~/c.json
+rm -f ~/c.json ~/.bash_history
+notebooklm auth check --test --json
+EOF
+cat > ~/hipnoz/CLAUDE.md <<'EOF'
+# Hipnoz SEP (mobil)
+- Dil: Türkçe. Cevaplar kısa ve akıcı olsun.
+- Kullanıcı Tıbbi Hipnoz SEP eğitimi alıyor (Medipol, 2026).
+- NotebookLM'e `notebooklm` komutuyla eriş (notebooklm skill'i yüklü).
+- Giriş hatası olursa kullanıcıya Termux'ta `nlm-yenile` yazmasını söyle.
+- Cihazdaki dosyalar: ~/storage/downloads (önce `termux-setup-storage` gerekir).
+- Claude Code'u güncelleme (`claude update`, `npm update -g` yasak; Android'de bozulur).
+EOF
+cat >> ~/.bashrc <<'EOF'
+export USE_BUILTIN_RIPGREP=0
+export DISABLE_AUTOUPDATER=1
+alias hipnoz='cd ~/hipnoz && claude'
+alias hipnoz-devam='cd ~/hipnoz && claude -c'
+alias nlm-yenile='sh ~/imp.sh'
+alias nlm-kontrol='notebooklm auth check --test --json | grep -E "\"status\"|notebook_count" | head -2'
+# HIPNOZ_MENU
+if [ -z "$HIPNOZ_MENU" ] && [ -t 0 ]; then
+  export HIPNOZ_MENU=1
+  echo "1) Claude Code  2) Devam et  3) NLM-Yenile  Enter) Terminal"
+  read -n1 -p "Secim: " s; echo
+  case $s in
+    1) cd ~/hipnoz && claude ;;
+    2) cd ~/hipnoz && (claude -c || claude) ;;
+    3) sh ~/imp.sh ;;
+  esac
+fi
+EOF
+termux-setup-storage
+echo "=== BLOK B TAMAM — Termux'u kapatip ac ==="
+```
+
+Sonra: Termux'u kapatıp aç → **3** (NotebookLM girişi, Firefox + Cookie-Editor ile) → **1** (Claude Code girişi; bağlantıyı **More… → Select URL** ile kopyala).
