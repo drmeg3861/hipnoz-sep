@@ -127,3 +127,60 @@ Sonra: Termux'u kapatıp aç → **3** (NotebookLM girişi, Firefox + Cookie-Edi
 **Güncelleme:** Chromium yolu işe yaramadı. Çerez, tabletteki Linux Firefox'ta Google'dan **çıkış yapıp tekrar giriş yapınca** birden geldi. Sonraki seferlerde ilk denenecek yöntem bu: çıkış → giriş → Cookie-Editor'da `__Secure-1PSIDTS` kontrolü.
 
 **Sonuç (1 Kasım 2026, 14:18):** Telefonda NotebookLM girişi tamam (22 not defteri görünüyor). Yöntem: tabletteki Linux Firefox'ta çıkış/giriş → Cookie-Editor Export → Quick Share ile telefona **metin** olarak gönderildi (panoya düştü) → Termux'ta `sh ~/imp.sh` → yapıştır → Enter → CTRL + d. Kurulum tamamlandı.
+
+---
+
+## Menü v2 — çıkınca menüye dön, `c` / `cc` kısayolları
+
+Claude Code'dan `/exit` ile çıkınca menü tekrar gelir. Terminalde de `c` = yeni konuşma, `cc` = kaldığı yerden devam.
+
+**Telefon (Termux)** — eski menüyü silip yenisini ekler:
+```
+sed -i '/# HIPNOZ_MENU/,$d' ~/.bashrc
+cat >> ~/.bashrc <<'EOF'
+# HIPNOZ_MENU
+alias c='cd ~/hipnoz && claude'
+alias cc='cd ~/hipnoz && (claude -c || claude)'
+hmenu() {
+  while true; do
+    echo; echo "1) Yeni  2) Devam  3) NLM-Yenile  Enter) Terminal"
+    read -n1 -p "Secim: " s; echo
+    case $s in
+      1) (cd ~/hipnoz && claude) ;;
+      2) (cd ~/hipnoz && (claude -c || claude)) ;;
+      3) sh ~/imp.sh ;;
+      *) break ;;
+    esac
+  done
+}
+if [ -z "$HIPNOZ_MENU" ] && [ -t 0 ]; then export HIPNOZ_MENU=1; hmenu; fi
+EOF
+```
+
+**Tablet (Linux Terminal)** — Claude Code resmî kurulum + aynı menü (NotebookLM girişi tablette Firefox'tan doğrudan okunur):
+```
+sudo apt update && sudo apt install -y curl git ripgrep pipx
+curl -fsSL https://claude.ai/install.sh | bash
+pipx install "notebooklm-py[cookies]" && pipx ensurepath
+mkdir -p ~/hipnoz
+cat >> ~/.bashrc <<'EOF'
+export PATH="$HOME/.local/bin:$PATH"
+# HIPNOZ_MENU
+alias c='cd ~/hipnoz && claude'
+alias cc='cd ~/hipnoz && (claude -c || claude)'
+hmenu() {
+  while true; do
+    echo; echo "1) Yeni  2) Devam  3) NLM-Yenile  Enter) Terminal"
+    read -n1 -p "Secim: " s; echo
+    case $s in
+      1) (cd ~/hipnoz && claude) ;;
+      2) (cd ~/hipnoz && (claude -c || claude)) ;;
+      3) notebooklm login --browser-cookies firefox && notebooklm auth check --test --json | grep -E '"status"|notebook_count' ;;
+      *) break ;;
+    esac
+  done
+}
+if [ -z "$HIPNOZ_MENU" ] && [ -t 0 ]; then export HIPNOZ_MENU=1; hmenu; fi
+EOF
+```
+Sonra Terminal'i kapatıp aç → **3** (NotebookLM girişi; önce Firefox'ta notebook.google.com açık olsun) → `notebooklm skill install` → **1** (Claude girişi).
