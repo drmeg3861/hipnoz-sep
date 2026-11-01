@@ -184,3 +184,47 @@ if [ -z "$HIPNOZ_MENU" ] && [ -t 0 ]; then export HIPNOZ_MENU=1; hmenu; fi
 EOF
 ```
 Sonra Terminal'i kapatıp aç → **3** (NotebookLM girişi; önce Firefox'ta notebook.google.com açık olsun) → `notebooklm skill install` → **1** (Claude girişi).
+
+---
+
+## Google Antigravity CLI (`agy`) — telefonda, Claude Code'dan kontrol
+
+Kuruldu: 1 Kasım 2026, Antigravity CLI 1.4.12 (Gemini 3.8 Flash). Resmî Google programı, Termux içindeki Debian (proot) ortamında çalışıyor. Resmî olmayan Termux yamaları kullanılmadı.
+
+Kurulum adımları (bir daha gerekirse):
+1. `pkg install -y proot-distro && proot-distro install debian`
+2. `proot-distro login debian -- bash -c "apt update && apt install -y curl ca-certificates util-linux && curl -fsSL https://antigravity.google/cli/install.sh | bash"`
+   ("ERROR: logging before google.Init" satırları zararsız; sonda "binary placed successfully" yazmalı.)
+3. Termux'ta `agy` kısayolu (`$PREFIX/bin/agy`):
+   ```
+   #!/data/data/com.termux/files/usr/bin/bash
+   exec proot-distro login debian --bind "$PWD:/work" -- bash -c 'cd /work && exec /root/.local/bin/agy "$@"' agy "$@"
+   ```
+4. `agy` → Google girişi (bağlantı: More… → Select URL).
+5. `~/hipnoz/CLAUDE.md`'ye: Antigravity'yi `agy -p "istek"` ile çağır.
+
+Kalıcı olanlar: Debian ortamı ve Antigravity girişi (`/root/.gemini/` Debian içinde), `agy` kısayolu. Termux kaldırılırsa hepsi gider.
+
+Menü v3 (4 = Antigravity):
+```
+sed -i '/# HIPNOZ_MENU/,$d' ~/.bashrc
+cat >> ~/.bashrc <<'EOF'
+# HIPNOZ_MENU
+alias c='cd ~/hipnoz && claude'
+alias cc='cd ~/hipnoz && (claude -c || claude)'
+hmenu() {
+  while true; do
+    echo; echo "1) Claude yeni  2) Claude devam  3) NLM-Yenile  4) Antigravity  Enter) Terminal"
+    read -n1 -p "Secim: " s; echo
+    case $s in
+      1) (cd ~/hipnoz && claude) ;;
+      2) (cd ~/hipnoz && (claude -c || claude)) ;;
+      3) sh ~/imp.sh ;;
+      4) (cd ~/hipnoz && agy) ;;
+      *) break ;;
+    esac
+  done
+}
+if [ -z "$HIPNOZ_MENU" ] && [ -t 0 ]; then export HIPNOZ_MENU=1; hmenu; fi
+EOF
+```
