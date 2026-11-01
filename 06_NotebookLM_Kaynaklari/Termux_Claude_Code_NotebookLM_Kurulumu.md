@@ -123,3 +123,5 @@ Sonra: Termux'u kapatıp aç → **3** (NotebookLM girişi, Firefox + Cookie-Edi
 4. `cp ~/.notebooklm/profiles/default/storage_state.json /mnt/shared/nlm.json` → tablette Dosyalar → İndirilenler → nlm.json → **Quick Share** ile telefona.
 5. Telefon Termux: `notebooklm auth import-cookies ~/storage/downloads/nlm.json; rm -f ~/storage/downloads/nlm.json; notebooklm auth check --test --json`
 6. Tablette nlm.json'u sil. Dosyayı WhatsApp/e-posta/bulutla gönderme.
+
+**Güncelleme:** Chromium yolu işe yaramadı. Çerez, tabletteki Linux Firefox'ta Google'dan **çıkış yapıp tekrar giriş yapınca** birden geldi. Sonraki seferlerde ilk denenecek yöntem bu: çıkış → giriş → Cookie-Editor'da `__Secure-1PSIDTS` kontrolü.
