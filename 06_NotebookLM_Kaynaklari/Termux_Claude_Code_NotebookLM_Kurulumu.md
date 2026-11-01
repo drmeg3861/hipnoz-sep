@@ -13,7 +13,9 @@ Bu not, 1 Kasım 2026 gecesi telefonda (Android, Termux) yapılan kurulumun öze
 
 Claude Code'dan çıkmak: `/exit` yaz ya da **CTRL + c**'ye iki kez bas.
 
-**Ana ekran kısayolları (Termux:Widget):** Ana ekrandaki Termux widget'ında üç düğme var: **Hipnoz** (yeni konuşma), **Hipnoz-Devam** (son konuşmaya devam), **NLM-Yenile** (NotebookLM girişini yenile). Scriptler `~/.shortcuts/` klasöründe duruyor. Widget, Termux'la **aynı kaynaktan** (F-Droid ya da GitHub) kurulmalı; kısayollar açılmazsa Termux'a "diğer uygulamaların üzerinde göster" izni verilmeli.
+**Açılış menüsü:** Termux açılınca bir menü çıkar: **1** = Claude Code (yeni konuşma), **2** = son konuşmaya devam, **3** = NotebookLM girişini yenile, **Enter** = normal terminal. Menü `~/.bashrc` dosyasının sonundaki `HIPNOZ_MENU` bloğundadır.
+
+**Neden widget yok:** Termux Play Store'dan kurulu. Termux:Widget Play Store'da yayında değil; F-Droid'deki sürüm ise Play Store Termux'uyla çalışmıyor (imzalar farklı). Play Store'daki "Termux Tools/Toolbox" gibi uygulamalar resmî değil, kurulmamalı. `~/.shortcuts/` scriptleri ileride widget kurulursa diye duruyor.
 
 ### NotebookLM girişi düşerse (`nlm-kontrol` "error" derse)
 1. Firefox → notebook.google.com (Masaüstü sitesi açık) → 1-2 dk bekle, sayfayı yenile.
