@@ -228,3 +228,25 @@ hmenu() {
 if [ -z "$HIPNOZ_MENU" ] && [ -t 0 ]; then export HIPNOZ_MENU=1; hmenu; fi
 EOF
 ```
+
+---
+
+## Menü v4 (1 Kasım 2026 akşam) — izin sormayan mod + Antigravity devam
+
+| Tuş | İş |
+|---|---|
+| 1 | Claude yeni (`claude --dangerously-skip-permissions`) |
+| 2 | Claude devam (`claude -c --dangerously-skip-permissions`) |
+| 3 | NotebookLM girişini yenile (`sh ~/imp.sh`) |
+| 4 | Antigravity yeni (`agy --dangerously-skip-permissions`) |
+| 5 | Antigravity devam (`agy -c --dangerously-skip-permissions`) |
+
+Mevcut menüye uygulanan değişiklikler (her biri **bir kez** çalıştırılır):
+```
+sed -i -E 's/\bclaude( -c)?\b/claude\1 --dangerously-skip-permissions/g' ~/.bashrc
+sed -i 's|4) (cd ~/hipnoz \&\& agy) ;;|4) (cd ~/hipnoz \&\& agy --dangerously-skip-permissions) ;;|' ~/.bashrc
+sed -i 's|  4) Antigravity  Enter)|  4) Antigravity  5) Antigravity devam  Enter)|; /^ *4) (cd ~\/hipnoz/a\      5) (cd ~/hipnoz \&\& (agy -c --dangerously-skip-permissions || agy --dangerously-skip-permissions)) ;;' ~/.bashrc
+```
+⚠️ Bu modda Claude ve Antigravity her komutu sormadan çalıştırır. Görevlerde dosya silme gibi riskli işleri açıkça istemedikçe sorun olmaz.
+
+Ses kayıtları iş akışı: Claude (1/2) dökümleri `~/hipnoz/ses/` klasörüne çeker → Antigravity (4/5) `/work/ses/` klasöründen okuyup `/work/ses_analiz/` klasörüne analiz yazar.
