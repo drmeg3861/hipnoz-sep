@@ -250,3 +250,23 @@ sed -i 's|  4) Antigravity  Enter)|  4) Antigravity  5) Antigravity devam  Enter
 ⚠️ Bu modda Claude ve Antigravity her komutu sormadan çalıştırır. Görevlerde dosya silme gibi riskli işleri açıkça istemedikçe sorun olmaz.
 
 Ses kayıtları iş akışı: Claude (1/2) dökümleri `~/hipnoz/ses/` klasörüne çeker → Antigravity (4/5) `/work/ses/` klasöründen okuyup `/work/ses_analiz/` klasörüne analiz yazar.
+
+---
+
+## Mac'ten telefona bağlanma (Tailscale + SSH + tmux) — 2 Kasım 2026
+
+Amaç: telefon ana makine; Mac sadece ekran/klavye. İki cihaz aynı canlı oturumu (tmux "hipnoz") görür.
+
+**Telefon (Termux):** `pkg install -y openssh tmux`, `passwd` ile şifre. `~/.bashrc` içinde `# HIPNOZ_MENU` satırından önce:
+```
+sshd 2>/dev/null
+termux-wake-lock 2>/dev/null
+if [ -z "$TMUX" ] && [ -t 0 ] && command -v tmux >/dev/null; then exec tmux new -A -s hipnoz; fi
+```
+`~/.tmux.conf`: `set -g mouse on`, `set -g window-size latest`, `set -g history-limit 20000`.
+
+**Mac:** `ssh-keygen -t ed25519` → `ssh-copy-id -p 8022 <termux_kullanıcı>@<telefonun_tailscale_adresi>` → `~/.ssh/config` içine `Host telefon` (HostName = telefonun Tailscale adresi, Port 8022, User = Termux `whoami`). Bağlanmak: `ssh telefon`. İsteğe bağlı: Terminal → Ayarlar → Profiller → Kabuk → Başlangıçta komut: `ssh telefon`.
+
+**tmux kısayolları:** CTRL+b sonra d (ayrıl, iş sürer) · c (yeni pencere) · n (sonraki) · 0-9 (pencereye git).
+
+Notlar: Telefon açık, Termux çalışır ve Tailscale bağlı olmalı. Pencereyi kapatmak işi durdurmaz; bitirmek için Claude'da `/exit`, Antigravity'de CTRL+c.
