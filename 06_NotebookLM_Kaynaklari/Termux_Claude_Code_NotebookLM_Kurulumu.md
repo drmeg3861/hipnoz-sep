@@ -272,3 +272,11 @@ if [ -z "$TMUX" ] && [ -t 0 ] && command -v tmux >/dev/null; then exec tmux new 
 Notlar: Telefon açık, Termux çalışır ve Tailscale bağlı olmalı. Pencereyi kapatmak işi durdurmaz; bitirmek için Claude'da `/exit`, Antigravity'de CTRL+c.
 
 **Güncelleme (2 Kasım 2026):** tmux içinde Claude Code 2.1.112 hiçbir tuşu (Enter dahil) almadı; `default-terminal`, `escape-time`, `extended-keys off` denemeleri işe yaramadı. Açılışta otomatik tmux satırı `~/.bashrc`'den kaldırıldı (`sshd` ve `termux-wake-lock` satırları duruyor). Çalışan yöntem: Mac'ten `ssh telefon` → menü **2** (Claude devam) / **5** (Antigravity devam). Aynı konuşmayı iki cihazda aynı anda açık tutma; birinden çıkıp diğerinden devam et.
+
+**screen ile canlı ekran (2 Kasım 2026):** tmux yerine GNU screen denendi; Claude Code 2.1.112 içinde yazı ve Enter çalıştı. Kurulum:
+```
+pkg install -y screen
+printf 'startup_message off\ndefscrollback 20000\ntermcapinfo xterm* ti@:te@\n' > ~/.screenrc
+sed -i '/# HIPNOZ_MENU/i if [ -z "$STY" ] \&\& [ -t 0 ] \&\& command -v screen >/dev/null; then exec screen -xRR hipnoz; fi' ~/.bashrc
+```
+Telefonda Termux açılınca ve Mac'ten `ssh telefon` ile bağlanınca aynı `hipnoz` screen oturumuna girilir. Kısayollar: CTRL+a sonra d (ayrıl) · c (yeni pencere) · n (sonraki pencere).
