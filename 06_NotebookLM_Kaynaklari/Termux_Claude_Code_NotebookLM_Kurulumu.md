@@ -270,3 +270,5 @@ if [ -z "$TMUX" ] && [ -t 0 ] && command -v tmux >/dev/null; then exec tmux new 
 **tmux kısayolları:** CTRL+b sonra d (ayrıl, iş sürer) · c (yeni pencere) · n (sonraki) · 0-9 (pencereye git).
 
 Notlar: Telefon açık, Termux çalışır ve Tailscale bağlı olmalı. Pencereyi kapatmak işi durdurmaz; bitirmek için Claude'da `/exit`, Antigravity'de CTRL+c.
+
+**Güncelleme (2 Kasım 2026):** tmux içinde Claude Code 2.1.112 hiçbir tuşu (Enter dahil) almadı; `default-terminal`, `escape-time`, `extended-keys off` denemeleri işe yaramadı. Açılışta otomatik tmux satırı `~/.bashrc`'den kaldırıldı (`sshd` ve `termux-wake-lock` satırları duruyor). Çalışan yöntem: Mac'ten `ssh telefon` → menü **2** (Claude devam) / **5** (Antigravity devam). Aynı konuşmayı iki cihazda aynı anda açık tutma; birinden çıkıp diğerinden devam et.
