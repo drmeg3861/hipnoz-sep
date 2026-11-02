@@ -280,3 +280,17 @@ printf 'startup_message off\ndefscrollback 20000\ntermcapinfo xterm* ti@:te@\n' 
 sed -i '/# HIPNOZ_MENU/i if [ -z "$STY" ] \&\& [ -t 0 ] \&\& command -v screen >/dev/null; then exec screen -xRR hipnoz; fi' ~/.bashrc
 ```
 Telefonda Termux açılınca ve Mac'ten `ssh telefon` ile bağlanınca aynı `hipnoz` screen oturumuna girilir. Kısayollar: CTRL+a sonra d (ayrıl) · c (yeni pencere) · n (sonraki pencere).
+
+---
+
+## Kısayol kartı
+
+**Menü / kısa komutlar:** `hmenu` (menüyü aç) · 1 Claude yeni · 2 Claude devam · 3 NLM yenile · 4 Antigravity yeni · 5 Antigravity devam · `ssh telefon` (Mac'ten bağlan)
+
+**Termux:** Ses kısma + K (klavye aç/kapa) · Ses kısma + C (CTRL+C) · Ses kısma + D (CTRL+D) · Ses kısma + L (ekranı temizle) · Ses açma + Q (ek tuş satırını aç/kapa) · Soldan kaydır (sekmeler, ⌨ klavye düğmesi) · Uzun bas → Paste / More… → Select URL
+
+**screen (CTRL+a, bırak, sonra):** c yeni pencere · n / p sonraki / önceki · " pencere listesi · 0-9 pencereye git · d ayrıl (sekme kapanır, iş sürer) · k pencereyi kapat · Esc kaydırma modu (çıkış Esc) · \ her şeyi kapat
+
+**Claude Code:** `/exit` çık · Esc durdur · CTRL+c iki kez çık · CTRL+o tüm konuşma · Shift+Tab izin modu · `/clear` yeni konu · `/compact` özetle devam · `/model` · `/effort` · `/resume` geçmiş konuşmalar
+
+**Antigravity:** CTRL+c çık · Esc iptal · `/model` · `/config` · `/resume`
